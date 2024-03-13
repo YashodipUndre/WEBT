@@ -1,0 +1,141 @@
+body
+{
+    height: 3000px;
+    font-family: proxima-nova,sans-serif;
+}
+
+.hor-navbar
+{
+    height: 60px;
+    background-color: #FF90BC;
+    display: flex;
+    flex: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.left-side
+{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+.logo
+{
+    width: 50px;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.right-side
+{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.search
+{
+    margin-top: 8px;
+    height: 28px;
+    border-radius: 15px;
+    border: none;
+    width: 100px;
+    z-index: 1;
+    margin-right: 30px;
+    transition: width 0.35s ease;
+    color: lightslategray;
+}
+
+
+.search:hover
+{
+   width: 160px;
+}
+
+.search:focus
+{
+    outline-color: #FCAEAE;
+    border-style: solid;
+    border-width: 1px;
+    color: lightslategray;
+    width: 160px;
+}
+
+.menu
+{
+    height: 20px;
+    width: 20px;
+    flex: 1;
+}
+
+.account
+{
+    width: 40px;
+    height: 30px;
+    margin-top:10px ;
+    color: #FCAEAE;
+}
+
+.logo-box 
+{
+display: grid;
+grid-template-columns: 60px 1fr;
+width: 400px;
+margin-left: 20px;
+
+}
+
+.logo-box h1
+{
+color: #FFFFFF;
+font-size: 23px;
+font-family: Merriweather;
+}
+
+.logo-box span
+{
+font-size: 27px;
+font-weight: bold;
+}
+.MenuBar{
+    width: 0px;
+    height: 700px;
+    margin-left: -8px;
+    margin-top: 52px;
+    box-shadow: 0px 8px 8px 0px black;
+    background-color:white;
+    transition: 0.4s;
+    position: fixed;
+    overflow-x: hidden;
+}
+.hor-navbar .left-side a img:hover{
+  transition: 0.3s;
+  height: 27px;
+  width: 27px;
+}
+.MenuBar button{
+    width: 200px;
+    height: 40px;
+    background: none;
+    border: none;
+
+}
+.MenuBar button:hover{
+    background-color: #FFEADD;
+    border-radius: 10px;
+}
+.MenuBar button img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
