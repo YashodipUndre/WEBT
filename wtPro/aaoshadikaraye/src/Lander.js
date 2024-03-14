@@ -12,6 +12,9 @@ function NavBar({onClick}){
     window.addEventListener("load",()=>{
         setWid("50px")
     })
+    window.addEventListener("focus",()=>{
+        setWid("50px")
+    })
     return(
         <nav class="hor-navbar">
         <section class="left-side">
@@ -49,7 +52,7 @@ function MainDiv(){
         <h1>Shadi Karni He</h1>
         <h2>Ajao Kara Denge</h2>
     </div>
-    <button><Link to={'/MainPage'}>Get Started</Link></button>
+    <button><Link to={'/SignUp'}>Get Started</Link></button>
 </div>);
 }
 export  {NavBar,MainDiv,SideMenu};

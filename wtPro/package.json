@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "pratice-app",
   "main": "index.js",
+  "homepage": ".",
   "scripts": {
     "start": "index.js",
     "dev": "nodemon index.js",

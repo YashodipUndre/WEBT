@@ -1,12 +1,7 @@
 //imports
 const express = require('express');
-const ejs = require('ejs')
 const mongodb = require('mongodb');
-const MongoClient = mongodb.MongoClient;
 const server = express();
-const jwt = require('jsonwebtoken');
-const ClgModel = require("./Model/College")
-const College = ClgModel.Model;
 const cors = require('cors');
 require('dotenv').config()
 const mongoose = require('mongoose');
@@ -14,15 +9,13 @@ const username = encodeURIComponent("yashundre07");
 const password = encodeURIComponent("Yashodip@123");
 const db = `mongodb+srv://${username}:${password}@cluster0.uucxr3d.mongodb.net/?appName=mongosh+2.1.4/`
 const ldb = 'mongodb://localhost:27017/ecommarce'
-const StudentModel = require("./Model/Student")
-const Students = StudentModel.Model;
-const TeacherModel = require("./Model/Teacher")
-const Teacher = TeacherModel.Model;
 const session = require('express-session')
 const passport = require("passport");
 const bdp = require("body-parser");
 const path = require('path')
 const LocalStrategy = require('passport-local').Strategy;
+const User = require('./Model/User');
+const UserModel = User.Model;
 server.use(cors());
 server.use(bdp.json());
 server.use(bdp.urlencoded())
@@ -87,21 +80,11 @@ passport.deserializeUser((id, done) => {
 
 //Static for react files
 server.use(express.static('build'));
-server.use('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
-})
+server.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname,'build', "index.html"));
+});
 
-//Controller 
-server.get('/ld', isauth, (req, res) => {
-    req.session.test ? req.session.test++ : req.session.test = 1;
-    res.send(req.session.test.toString() + " " + req.user.username);
-})
-function isauth(req, res, done) {
-    if (req.user) {
-        return done();
-    }
-    return res.redirect('/');
-}
+//Auth Funtion
 server.post('/logout', (req, res) => {
     req.logout((err) => {
         if (err) {
@@ -117,8 +100,41 @@ server.post('/login',
         res.json(req.user);
     });
 
+function isauth(req, res, done) {
+    if (req.user) {
+        return done();
+    }
+    return res.redirect('/');
+}
 
+server.get('/ld', isauth, (req, res) => {
+    req.session.test ? req.session.test++ : req.session.test = 1;
+    res.send(req.session.test.toString() + " " + req.user.username);
+})
+server.post('/registration',async (req,res)=>{
+    try {
+        const newUser=new UserModel(req.body);
+        const as = await newUser.save();
+        res.json(as);
+    }
+    catch (error) {
+        // res.status(500).json({ error: error.message })
+         console.log(error)
+         res.json(req.body);
+    }
+        
+})
 
-
+server.get('/registration',async (req,res)=>{
+    res.json(req.body);
+    try {
+        const newUser=await UserModel.find();
+        res.json(newUser);
+    }
+    catch (err) {
+       console.log(err.message);
+    }
+        
+})
 //Server
 server.listen(8080);

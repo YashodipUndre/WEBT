@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './CSS/App.css';
 import { NavBar, MainDiv, SideMenu } from './Lander';
 import { BrowserRouter as Router, Route, Routes, Switch } from 'react-router-dom';
-import TT from './MainPage';
+import SignUp from './SignUp';
 function App() {
   const [SMBDSIZE, setSMBDSIZE] = useState("0px");
 
@@ -23,8 +23,8 @@ function App() {
           <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
           <MainDiv></MainDiv>
         </>} />
-        <Route exact path="/MainPage" element={<>
-        <TT></TT>
+        <Route exact path="/SignUp" element={<>
+        <SignUp></SignUp>
         </>} />
       </Routes>
     </Router>
