@@ -19,6 +19,7 @@ const UserModel = User.Model;
 server.use(cors());
 server.use(bdp.json());
 server.use(bdp.urlencoded())
+const service = require('./Routers/service')
 
 
 //DataBase
@@ -40,8 +41,7 @@ server.use(passport.session())
 
 passport.use(new LocalStrategy(
     function (username, password, done) {
-        console.log(username);
-        Teacher.findOne({ username: username })
+        UserModel.findOne({ username: username })
             .then(user => {
                 if (!user) {
                     return Promise.reject(new Error('User not found'));
@@ -69,7 +69,7 @@ passport.serializeUser((user, done) => {
     return done(null, false);
 });
 passport.deserializeUser((id, done) => {
-    Teacher.findById(id)
+    UserModel.findById(id)
         .then(user => {
             return done(null, user)
         })
@@ -77,12 +77,13 @@ passport.deserializeUser((id, done) => {
             return done(null, false);
         })
 })
-
+//server.use(express.static('public'));
 //Static for react files
-server.use(express.static('build'));
-server.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname,'build', "index.html"));
-});
+// server.use(express.static('public'));       
+// server.use("/*", function(req, res) {
+//   res.sendFile(path.join(__dirname,'public', "index.html"));
+// });
+server.use('/service',service.router)
 
 //Auth Funtion
 server.post('/logout', (req, res) => {
@@ -92,25 +93,31 @@ server.post('/logout', (req, res) => {
         }
 
     });
-    res.send("logged out")
+    res.json(req.body);
+    console.log(req.body)
 })
 server.post('/login',
     passport.authenticate('local'),
     function (req, res) {
         res.json(req.user);
+       
     });
 
 function isauth(req, res, done) {
     if (req.user) {
+        console.log(req.user);
         return done();
+        
     }
-    return res.redirect('/');
+    return res.json({loggedin:false});
 }
-
-server.get('/ld', isauth, (req, res) => {
-    req.session.test ? req.session.test++ : req.session.test = 1;
-    res.send(req.session.test.toString() + " " + req.user.username);
+server.get('/UserProfile',isauth,(req,res)=>{
+    res.json(req.user);
 })
+// server.get('/tt', (req, res) => {
+//     req.session.test ? req.session.test++ : req.session.test = 1;
+//     res.send(req.session.test.toString() + " " + req.user.username);
+// })
 server.post('/registration',async (req,res)=>{
     try {
         const newUser=new UserModel(req.body);
@@ -125,16 +132,5 @@ server.post('/registration',async (req,res)=>{
         
 })
 
-server.get('/registration',async (req,res)=>{
-    res.json(req.body);
-    try {
-        const newUser=await UserModel.find();
-        res.json(newUser);
-    }
-    catch (err) {
-       console.log(err.message);
-    }
-        
-})
 //Server
 server.listen(8080);

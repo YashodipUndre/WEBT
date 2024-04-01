@@ -3,6 +3,7 @@ import './CSS/SignUp.css'
 import { NavBar } from './Lander';
 import LogoRingPink from './Images/icons8-wedding-ring-64-pink.png';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 function SignUp(){
   const [formData, setFormData] = useState({
     name: '',
@@ -41,7 +42,7 @@ function SignUp(){
     <NavBar></NavBar>
     <div className='popup'>
         <div className='popup-inner'>
-        <p>{constent}</p>
+          <div id='pop-st'><p>{constent}</p></div>
         <img class="log" alt={LogoRingPink}src={LogoRingPink} style={{width:'50px'}}/>
       <h2>AaoShaadiKaraye</h2>
       <form onSubmit={handleSubmit}>
@@ -69,8 +70,9 @@ function SignUp(){
           <input type="checkbox" id="terms" name="terms" checked={formData.terms} onChange={handleChange} required />
           <label htmlFor="terms">I agree to the terms and conditions</label>
         </div>
-        <div>
+        <div id='LastDiv'>
           <button type="submit">Register</button>
+          <Link id={'login'} to={'/login'}>Already have an account ?</Link>
         </div>
       </form>
       </div>

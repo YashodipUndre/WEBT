@@ -5,16 +5,17 @@ import { useState } from 'react'
 import backgroundImg from './Images/center-point-events-03.png'
 import { Link } from 'react-router-dom'
 function NavBar({onClick}){
+
     function Opening(){
         onClick();
     }
-    const [wid ,setWid] = useState("0px");
-    window.addEventListener("load",()=>{
-        setWid("50px")
-    })
-    window.addEventListener("focus",()=>{
-        setWid("50px")
-    })
+    const [wid ,setWid] = useState("50px");
+    // window.addEventListener("load",()=>{
+    //     setWid("50px")
+    // })
+    // window.addEventListener("focus",()=>{
+    //     setWid("50px")
+    // })
     return(
         <nav class="hor-navbar">
         <section class="left-side">
@@ -27,12 +28,12 @@ function NavBar({onClick}){
 
         <section class="right-side">
             <a href="">Home</a>
-            <a href="">Services</a>
+            <a href="">Stories</a>
             <a href="">AboutUs</a>
             <a href="">Contact</a>
         </section>
         <section class="end-side">
-            <button>Sign-Up</button>
+            <button><Link id={'ll'}to={'/SignUp'}>Sign-Up</Link></button>
             <button id="MenuBarRes" onClick={Opening}><img src={MenuLogo} alt="" id="MenuBarResImg"/></button>
         </section>
     </nav>
@@ -52,7 +53,7 @@ function MainDiv(){
         <h1>Shadi Karni He</h1>
         <h2>Ajao Kara Denge</h2>
     </div>
-    <button><Link to={'/SignUp'}>Get Started</Link></button>
+    <button><Link to={'/MainPage'} style={{textDecoration:"None",color:"black"}}>Get Started</Link></button>
 </div>);
 }
 export  {NavBar,MainDiv,SideMenu};
