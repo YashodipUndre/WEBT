@@ -1,5 +1,5 @@
 import { NavBar } from "./Lander";
-import './CSS/SignUp.css'
+import styles from "./CSS/SignUp.css"
 import LogoRingPink from './Images/icons8-wedding-ring-64-pink.png';
 import { useState } from "react";
 import axios from 'axios'
@@ -44,10 +44,10 @@ function Login(){
         <div>
     <NavBar></NavBar>
     <div className='popup'>
-        <div className='popup-inner'>
-          <div id='pop-st'><p>{constent}</p></div>
+        <div className='popupInner'>
+          <div id='popSt'><p>{constent}</p></div>
         <img class="log" alt={LogoRingPink}src={LogoRingPink} style={{width:'50px'}}/>
-      <h2>AaoShaadiKaraye</h2>
+      <h2 className="h2tag">AaoShaadiKaraye</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>

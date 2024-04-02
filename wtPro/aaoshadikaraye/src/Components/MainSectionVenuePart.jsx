@@ -1,10 +1,8 @@
 import styles from "./MainPage.module.css"
+
 const VenueSection = () => {
   return (
     <>
-     
-      <br></br>
-      <br></br>
       <h2 className={styles.h2tag}>Decorations</h2>
     
 

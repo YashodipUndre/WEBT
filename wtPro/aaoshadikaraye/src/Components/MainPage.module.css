@@ -6,6 +6,9 @@
 	margin-bottom: 0px;
 	font-size: 0.8em;
 }
+body{
+  overflow-x: hidden;
+}
 nav {
   background-color: #FF90BC;
   padding: 10px;
@@ -23,29 +26,29 @@ body {
 }
 .slideshow {
   overflow: hidden;
-  height: 510px;
-  width: 1000px;
-  margin: 0 auto;
+  height: 600px;
+  width: 1200px;
+  margin: 0 0;
 }
 .para{
   font-size: small;
 }
 .slide {
   float: left;
-  height: 510px;
-  width:1000px;
+  height: 600px;
+  width:1200px;
   margin-left: 20px;
 }
 
 .slideWrapper {
-  width: calc(1000px * 4);
+  width: calc(1500px*4);
   animation: slide 15s ease-in-out infinite;
 }
 
 @keyframes slide {
   20% { margin-left: 0px; }
-  50% { margin-left: calc(-1000px * 1); }
-  90% { margin-left: calc(-1000px * 2); }
+  50% { margin-left: calc(-1200px * 1); }
+  90% { margin-left: calc(-1200px * 2); }
 }
 
 div.scrollContainer {
@@ -125,7 +128,7 @@ body {
 }
 
 .imgFluid {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
 }
 

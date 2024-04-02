@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CSS/SignUp.css'
+import  "./CSS/SignUp.css"
 import { NavBar } from './Lander';
 import LogoRingPink from './Images/icons8-wedding-ring-64-pink.png';
 import axios from 'axios';
@@ -40,11 +40,11 @@ function SignUp(){
   return (
     <div>
     <NavBar></NavBar>
-    <div className='popup'>
-        <div className='popup-inner'>
-          <div id='pop-st'><p>{constent}</p></div>
-        <img class="log" alt={LogoRingPink}src={LogoRingPink} style={{width:'50px'}}/>
-      <h2>AaoShaadiKaraye</h2>
+    <div className="popup">
+        <div className="popupInner">
+          <div className="popSt"><p>{constent}</p></div>
+        <img className="log" alt={LogoRingPink}src={LogoRingPink} style={{width:'50px'}}/>
+      <h2 className="h2tag">AaoShaadiKaraye</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" >Name:</label>
@@ -72,7 +72,7 @@ function SignUp(){
         </div>
         <div id='LastDiv'>
           <button type="submit">Register</button>
-          <Link id={'login'} to={'/login'}>Already have an account ?</Link>
+          <Link id={'login'} className="login" to={'/login'}>Already have an account ?</Link>
         </div>
       </form>
       </div>
