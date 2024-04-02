@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import  "./CSS/SignUp.css"
-import { NavBar } from './Lander';
+import { NavBar, SideMenu } from './Lander';
 import LogoRingPink from './Images/icons8-wedding-ring-64-pink.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 function SignUp(){
+  const [SMBDSIZE, setSMBDSIZE] = useState("0px");
+  function SideMenuLoader() {
+      if (SMBDSIZE === "0px") {
+          setSMBDSIZE("200px");
+      } else if (SMBDSIZE === "200px") {
+          setSMBDSIZE("0px");
+      }
+  }
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,7 +47,8 @@ function SignUp(){
 
   return (
     <div>
-    <NavBar></NavBar>
+   <NavBar onClick={SideMenuLoader}></NavBar>
+      <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
     <div className="popup">
         <div className="popupInner">
           <div className="popSt"><p>{constent}</p></div>

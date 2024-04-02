@@ -1,4 +1,4 @@
-import {NavBar} from "./Lander";
+import {NavBar,SideMenu} from "./Lander";
 import Corousel from "./Components/Corosel";
 import VenueSection from "./Components/MainSectionVenuePart";
 import MainSection2 from "./Components/MainSection2";
@@ -7,8 +7,18 @@ import Makeupdata from "./store/makeupData";
 import Gallery from "./Components/Gallery";
 import Footer from "./Components/Footer";
 import PopularVenueSection from "./Components/PopularVenueSection";
+import { useState } from "react";
 
 function MainPage() {
+
+  const [SMBDSIZE, setSMBDSIZE] = useState("0px");
+  function SideMenuLoader() {
+      if (SMBDSIZE === "0px") {
+          setSMBDSIZE("200px");
+      } else if (SMBDSIZE === "200px") {
+          setSMBDSIZE("0px");
+      }
+  }
   const popularVenueData = [
     {
       type: "4 Star and Above Wedding",
@@ -49,7 +59,8 @@ function MainPage() {
 
   return (
     <>
-      <NavBar />
+      <NavBar onClick={SideMenuLoader}></NavBar>
+      <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
       <Corousel />
       <PopularVenueSection data={popularVenueData} />
       <VenueSection />

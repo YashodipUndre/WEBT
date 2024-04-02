@@ -1,5 +1,5 @@
-import { NavBar } from "./Lander";
-import styles from "./CSS/SignUp.css"
+import { NavBar, SideMenu } from "./Lander";
+import "./CSS/SignUp.css"
 import LogoRingPink from './Images/icons8-wedding-ring-64-pink.png';
 import { useState } from "react";
 import axios from 'axios'
@@ -7,6 +7,14 @@ import { useAuth } from "./UserContext";
 import { useNavigate } from 'react-router-dom';
 
 function Login(){
+  const [SMBDSIZE, setSMBDSIZE] = useState("0px");
+  function SideMenuLoader() {
+      if (SMBDSIZE === "0px") {
+          setSMBDSIZE("200px");
+      } else if (SMBDSIZE === "200px") {
+          setSMBDSIZE("0px");
+      }
+  }
  const [user,authUser] = useAuth();
   const history = useNavigate();
     const [formData, setFormData] = useState({
@@ -29,7 +37,7 @@ function Login(){
           console.log(ans.data);
           authUser(ans.data);
           localStorage.setItem('auth',JSON.stringify(ans.data));
-          history('/UserProfile');
+          history('/MainPage');
          }
          else{
           setContest("incorrect password!");
@@ -42,7 +50,8 @@ function Login(){
     
     return(
         <div>
-    <NavBar></NavBar>
+    <NavBar onClick={SideMenuLoader}></NavBar>
+      <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
     <div className='popup'>
         <div className='popupInner'>
           <div id='popSt'><p>{constent}</p></div>

@@ -149,7 +149,7 @@ body {
   height: 10px;
   margin-bottom: 15px;
   margin-left: 20px;
-  display: none;
+  display: block;
 }
 
 .hor-navbar button img {
