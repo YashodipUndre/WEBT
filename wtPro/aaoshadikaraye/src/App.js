@@ -10,6 +10,7 @@ import instance from './Cokkies';
 import axios from 'axios';
 import Home from './Home';
 import MainPage from './MainPage';
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [auth,userAuth] = useAuth();
   const [SMBDSIZE, setSMBDSIZE] = useState("0px");
