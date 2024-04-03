@@ -8,6 +8,9 @@
 }
 body{
   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 nav {
   background-color: #FF90BC;
@@ -29,6 +32,7 @@ body {
   height: 600px;
   width: 1200px;
   margin: 0 0;
+
 }
 .para{
   font-size: small;

@@ -10,13 +10,19 @@
       font-family: "Mukta";
   }
   .container {
-    width: 1200px; /* Adjusted width to fit all divs in one line */
+    width: 1200px; 
     margin: 20px auto;
     display: flex;
     justify-content: space-between; /* Aligns items with equal space between them */
     flex-wrap: wrap;
   }
-  
+  .h2tag{
+    font-weight: 600;
+    font-size: larger;
+    margin-bottom: 0px;
+    font-size: 1.8em;
+      float: left;
+  }
   .pkg {
     width: calc(25% - 40px); /* 25% of container width minus margins */
    height: 300px;
@@ -105,22 +111,25 @@
   }
   
   /* Customize colors based on package type */
-  .pkg1 .front {
-    background-image: url(https://i.etsystatic.com/5335043/r/il/f3480c/1924220164/il_570xN.1924220164_je2k.jpg);
+  .pkg:nth-child(1) .front {
+    background-image: url(https://media.istockphoto.com/id/1484130495/vector/shiny-metal-texture-silver-or-stainless-steel-background.jpg?s=612x612&w=0&k=20&c=l-At27ry22KvWByVTGGgIEn5xMWTmVktrnxbTWaO_bQ=);
+    background-size: cover;
     
   }
   
-  .pkg2 .front {
-    background-image: url(https://5.imimg.com/data5/SELLER/Default/2023/2/HK/MT/TM/62715587/textured-sheet-with-designer-mdf-golden-wedding-card-500x500.jpg);
+  .pkg:nth-child(2).front {
+    background-image: url(https://img.freepik.com/free-vector/golden-waves-background_1284-43064.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1712102400&semt=ais);
+    background-size: cover;
   
   }
   
-  .pkg3 .front {
-    background-image: url(https://m.media-amazon.com/images/I/815Qz83bLyL._AC_UF1000,1000_QL80_.jpg);
+  .pkg:nth-child(3) .front {
+    background-image: url(https://t4.ftcdn.net/jpg/01/61/68/99/360_F_161689955_EpKC0KL9j377yZPjRrmm4mc1sXxuKG9P.jpg);
+    background-size: cover;
    
   }
   
-  #pkg4 .front {
+  .pkg:nth-child(4) .front {
     background-image: url(https://wow-weddings.ie/wp-content/uploads/2022/03/Vintage-Lace-scaled.jpg);
    background-size: cover;
   }

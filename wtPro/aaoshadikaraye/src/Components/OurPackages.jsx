@@ -1,8 +1,8 @@
-import styles from "./OurPackages.module.css"
-const OurPackages=()=>{
-    return(
-        <div className={styles.container}>
-      <h1>Our Packages</h1>
+import styles from "./OurPackages.module.css";
+const OurPackages = () => {
+  return (
+    <div className={styles.container}>
+      <h2 className={styles.h2tag}>Our Packages</h2>
       <div className={styles.container}>
         <div id="pkg1" className={styles.pkg}>
           <div className={styles.front}>
@@ -21,7 +21,7 @@ const OurPackages=()=>{
             </div>
           </div>
         </div>
-        <div id="pkg2"  className={styles.pkg}>
+        <div id="pkg2" className={styles.pkg}>
           <div className={styles.front}>
             <h2>Gold</h2>
           </div>
@@ -76,6 +76,6 @@ const OurPackages=()=>{
         </div>
       </div>
     </div>
-    )
-}
-export default OurPackages
+  );
+};
+export default OurPackages;
