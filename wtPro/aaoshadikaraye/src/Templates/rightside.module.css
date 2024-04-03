@@ -1,0 +1,37 @@
+.search{
+  width: 200px;
+  height: 40px;
+  border: 1px solid #ccc;
+  display: grid;
+  grid-template-columns: 20px 150px;
+  margin-top: 18px;
+}
+
+.searchBox{
+  border: none;
+  height: 90%;
+  width: 140px;
+  margin-left: 20px;
+  display: inline-block;
+  background-color: transparent;
+}
+.icon{
+  display: inline-block;
+  margin-top: 18px;
+  margin-left: 8px;
+}
+.icon1{
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 8px;
+}
+
+.option{
+  display:flex;
+  flex-direction: row;
+  text-decoration: none;
+  gap: 28px;
+  margin-top: 10px;
+  margin-left: 10px;
+
+}

@@ -1,0 +1,26 @@
+.headingbar{
+ display: flex;
+ flex-direction: row;
+ flex-shrink: 10;
+}
+
+.firstBlock{
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+
+}
+.para{
+  display: inline-block;
+  margin-top: 0px;
+  font-size: 10px;
+}
+
+.secondSection{
+  display: flex;
+  flex-direction: row;
+  margin-left: 650px;
+}
+.h4Tag{
+  margin-bottom: 0px;
+}

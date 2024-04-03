@@ -1,11 +1,28 @@
 import styles from "./WeddingMainSection.module.css"
 import { useState } from "react";
+import axios from "axios";
+import { useService } from "../ServiceDataContext";
+import { useNavigate } from "react-router-dom";
 const WeddingCategoriesSection=()=>{
+    const history = useNavigate();
    const [state, setIsVisible] = useState(false);
-
+   const [serviceData,setServiceData] = useService('');
   const handleClick = () => {
     setIsVisible(!state);
   };
+   async function OpenVenues(e){
+    try{
+        const ans = await axios.get(`http://localhost:8080/service/venues/${e.target.id}`);
+        setServiceData(ans.data);
+        console.log(ans.data);
+        localStorage.setItem('ServiceData',JSON.stringify(ans.data));
+        history('/Venues');
+
+    }
+       catch (error) {
+         console.log(error)
+         }
+  }
     return(
         <section className={styles.outerDiv}>
             <h2 className={styles.h2tag}>Everything You Need!!</h2>
@@ -16,12 +33,13 @@ const WeddingCategoriesSection=()=>{
                     <p>Venues</p>
                 </button>
                 {state && (<div className={styles.venueDiv}>
-                    <a href="#" >Lawns and Resort</a>
-                    <a href="#">$ Star and Above</a>
-                    <a href="#" >Lawns and Resort</a>
-                    <a href="#">$ Star and Above</a>
-                    <a href="#" >Lawns and Resort</a>
-                    <a href="#">$ Star and Above</a>
+                    <a href="#" id="All" onClick={OpenVenues}>All Types</a>
+                    <a href="#" id="lawns" onClick={OpenVenues}>lawns</a>
+                    <a href="#" id="FarmHouse" onClick={OpenVenues}>FarmHouse</a>
+                    <a href="#" id="" onClick={OpenVenues}>All Types</a>
+                    <a href="#" id="" onClick={OpenVenues}>All Types</a>
+                    <a href="#" id="" onClick={OpenVenues}>All Types</a>
+
                     </div>)}
                     {
                         !state && (

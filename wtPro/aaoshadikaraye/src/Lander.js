@@ -21,7 +21,7 @@ function NavBar({ onClick}) {
         const ans = await axios.post('http://localhost:8080/logout');
         authUser(null);
         localStorage.setItem('auth', null);
-        history('/MainPage');
+        //history('/MainPage');
     }
 
     
@@ -33,21 +33,18 @@ function NavBar({ onClick}) {
     // window.addEventListener("load",()=>{
     //     setWid("50px")
     // })
-    // window.addEventListener("focus",()=>{
-    //     setWid("50px")
-    // })
     return (
         <nav class="hor-navbar">
             <section class="left-side">
                 <div class="logo-box">
                     <img class="logo" src={LogoRing} style={{ width: wid }} />
-                    <h1><span>A</span>ao<span>S</span>haadi<span>K</span>araaye</h1>
+                    <h1><span>A</span>ao<span>S</span>haadi<span>K</span>araye</h1>
                 </div>
 
             </section>
 
             <section class="right-side">
-                <a href="">Home</a>
+                <a href="/MainPage">Home</a>
                 <a href="">Stories</a>
                 <a href="">AboutUs</a>
                 <a href="">Contact</a>
@@ -56,7 +53,7 @@ function NavBar({ onClick}) {
                 {
                     !user && (
                         <>
-                            <button><Link id={'ll'} to={'/SignUp'}>Sign-Up</Link></button>
+                            <Link id={'ll'} to={'/SignUp'}><button>Sign-Up</button></Link>
                             <button id="MenuBarRes" onClick={Opening}><img src={MenuLogo} alt="" id="MenuBarResImg" /></button>
                         </>
                     )
@@ -74,7 +71,7 @@ function NavBar({ onClick}) {
                                     <li>Hi,{user.username}</li>
                                     <li>Current Status</li>
                                     <li>Bookings</li>
-                                    <li><button onClick={Logout}>Logout</button></li>
+                                    <li><button onClick={Logout} id='LogOutBt'>Logout</button></li>
                                 </ul>
                             )}
                         </div>
@@ -89,10 +86,10 @@ function NavBar({ onClick}) {
 }
 function SideMenu({ SIZEGETTER }) {
     return (<div class="MenuBar SideMeny" id="SMB" style={{ width: SIZEGETTER }}>
-        <button>Home</button>
-        <button>Services</button>
-        <button>AboutUs</button>
-        <button>Contact</button>
+       <a href='/MainPage'><button>Home</button></a>
+       <a><button>Stroies</button></a>
+       <a><button>ConstactUs</button></a>
+       <a><button>AboutUs</button></a>
     </div>);
 }
 function MainDiv() {

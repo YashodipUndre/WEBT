@@ -8,6 +8,17 @@ const path = require('path')
     res.json(Query)
       
 }
+exports.getLawnsvanue = async(req,res)=>{
+    let Query =await venues.find({venuesType:'lawns'});
+    res.json(Query)
+      
+}
+exports.getFarmHouseVenues=async(req,res)=>{
+    let Query =await venues.find({venuesType:'farmHouse'});
+    res.json(Query)
+      
+}
+
 exports.getAdd=async(req,res)=>{
     const newTem = await ejs.renderFile(path.resolve(__dirname,"../form.ejs"))
     res.send(newTem);

@@ -1,0 +1,120 @@
+
+.card{
+  width: 23rem;
+  text-decoration: none;
+   display: flex;
+   flex-direction: column;
+   margin-top: 30px;
+   height: 27em;
+   transition: all 0.3s ease-in-out;
+   border-radius: 20px;
+}
+.card:hover{
+  background-color: white;
+}
+.mainSection{
+  display: grid;
+  grid-template-columns: 320px 320px 320px 320px;
+  padding: 10px;
+}
+
+body{
+  
+}
+.cardImage{
+  height: 55%;
+  overflow: hidden;
+  object-fit: cover; 
+  border-radius: 15px;
+}
+
+.rating{
+  display: flex;
+  flex-direction: row;
+  display: inline-block;
+}
+.price{
+  display: flex;
+  flex-direction: row;
+  font-size: 17px;
+  display: inline-block;
+}
+.lowerDiv{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px 5px rgba(0, 0, 0, 0.1);
+  color:black;
+}
+.lowerDiv:hover{
+  transform: scale(1.1);
+  transition: 1s;
+
+  
+}
+.firstLine{
+  display: grid;
+  grid-template-columns: 155px 100px;
+  height: 40px;
+}
+
+.secondLine{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 150px 250px;
+  height: 40px;
+  margin: 0;
+}
+.icon{
+  margin-right: 10px;
+}
+
+.iconWidth{
+  width: 0.5em;
+  margin-right: 10px;
+  height: 1.0em;
+}
+.customEditFLine{
+  font-size: 15px;
+  width: 200px;
+  overflow:hidden;
+  white-space: nowrap; /* Prevent the text from wrapping */
+  text-overflow: ellipsis;
+}
+.customEditSLine{
+  font-size: 15px;
+  width: 230px;
+  overflow: hidden; /* Hide any content that overflows */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  text-overflow: ellipsis;
+}
+.typeof{
+  overflow: hidden; /* Hide any content that overflows */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  text-overflow: ellipsis;
+}
+.thirdLine{
+  display: flex;
+  flex-direction: row;
+  height: 90px;
+  gap: 90px;
+}
+.vegnonveg{
+  font-size: 11px;
+  display: inline-block;
+}
+.block1{
+  display: grid;
+  grid-template-rows: 40px 40px;
+}
+.customEditTLine{
+  font-size: 14px;
+}
+.mainOuter{
+ padding: 8px 8px;
+ background-color: aqua;
+}
+h3,h4,h5,strong{
+  text-decoration: none;
+}

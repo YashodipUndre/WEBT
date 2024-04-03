@@ -29,7 +29,7 @@ body {
 .logo {
   width:0px;
   height: 50px;
-  margin-top: 15px;
+  margin-top: 8px;
   margin-left: 9px;
   border-radius: 20px;
   transition: 1.5s;
@@ -62,14 +62,16 @@ body {
 }
 
 .logo-box h1 {
+  margin-bottom: 20px;
   color: #F9F9E0;
-  font-size: 27px;
+  font-size: 30px;
   font-family: "Nunito Sans", sans-serif;
 }
 
 .logo-box span {
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 550;
+  
 }
 
 .MenuBar {
@@ -109,8 +111,9 @@ body {
 }
 
 .right-side a:hover {
+  text-decoration: none;
   transition: 0.3s;
-  font-size: large;
+ 
   font-family: "Nunito Sans", sans-serif;
 }
 .end-side {
@@ -152,7 +155,7 @@ body {
   height: 10px;
   margin-bottom: 15px;
   margin-left: 20px;
-  display: block;
+  display: none;
 }
 
 .hor-navbar button img {
@@ -312,6 +315,7 @@ height: 100%;
 
 .dr li:hover {
   background-color: white;
+  color: black;
 }
 
 .venues {
@@ -496,4 +500,7 @@ background-color: #fff;
   white-space: nowrap;
   height: 10%;
   line-height: 18px;
+}
+#LogOutBt{
+  background-color: #8ACDD7;
 }
