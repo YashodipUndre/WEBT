@@ -8,7 +8,8 @@ import Gallery from "./Components/Gallery";
 import Footer from "./Components/Footer";
 import PopularVenueSection from "./Components/PopularVenueSection";
 import { useState } from "react";
-
+import WeddingCategoriesSection from "./Components/WeddingCategoriesSection";
+import OurPackages from "./Components/OurPackages";
 function MainPage() {
 
   const [SMBDSIZE, setSMBDSIZE] = useState("0px");
@@ -63,6 +64,8 @@ function MainPage() {
       <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
       <Corousel />
       <PopularVenueSection data={popularVenueData} />
+      <WeddingCategoriesSection/>
+      <OurPackages/>
       <VenueSection />
       <MainSection2 />
       

@@ -88,7 +88,7 @@ function NavBar({ onClick}) {
     );
 }
 function SideMenu({ SIZEGETTER }) {
-    return (<div class="MenuBar" id="SMB" style={{ width: SIZEGETTER }}>
+    return (<div class="MenuBar SideMeny" id="SMB" style={{ width: SIZEGETTER }}>
         <button>Home</button>
         <button>Services</button>
         <button>AboutUs</button>

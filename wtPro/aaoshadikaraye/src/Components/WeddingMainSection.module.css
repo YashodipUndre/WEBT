@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+.mukta-regular {
+  font-family: "Mukta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body{
+    font-family: "Mukta";
+}
+button{
+    border: none;
+}
+.outerDiv{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 1160px;
+    align-items: start;
+    margin-left: 88px;
+}
+.h2tag{
+	font-weight: 600;
+	font-size: larger;
+	margin-bottom: 0px;
+	font-size: 1.8em;
+    float: left;
+}
+.innerDiv{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+}
+
+.component{
+    width: 189px;
+    height: 169px;
+    border-radius: 50%;
+    margin-top: 50px;
+    z-index: 10;
+    position: absolute;
+    background-color: rgb(212, 164, 198);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: none;
+}
+.component:hover,.component1:hover,.component2:hover,.component3:hover,.component4:hover,.component5:hover,.component7:hover{
+    transform: scale(1.2);
+    text-decoration: none;
+    z-index: 100;
+}
+.component p,.component1 p,.component2 p,.component3 p,.component4 p,.component5 p,.component7 p{
+    color: white;
+    font-size: 2.2em;
+    font-weight: 400;
+}
+
+.component1{
+    width: 189px;
+    height: 169px;
+    border-radius: 50%;
+    margin-top: 50px;
+    z-index: 9;
+    margin-left: 160px;
+    position: absolute;
+    background-color:rgb(140, 201, 255) ;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component2{
+    width: 189px;
+    height: 169px;
+    border-radius: 50%;
+    margin-top: 50px;
+    z-index: 8;
+    position: relative;
+    margin-left: 320px;
+    background-color:rgb(253, 199, 219) ;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.venueDiv{
+    width: 80%;
+    margin-left: 200px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    z-index: 100;
+    background-color: white;
+}
+.temp{
+    display: flex;
+    flex-direction: row;
+}
+.temp button{
+    transition: all 0.3s ease;
+}
+.component3{
+    width: 189px;
+    height: 169px;
+    border-radius: 50%;
+    margin-top: 50px;
+    z-index: 7;
+    position: absolute;
+    margin-left: 480px;
+    background-color:rgb(200, 248, 161) ;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component4{
+    width: 189px;
+    height: 169px;
+    border-radius: 50%;
+    margin-top: 50px;
+    z-index: 6;
+    position: absolute;
+    margin-left: 640px;
+    background-color:rgb(253, 255, 128) ;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component5{
+    width: 189px;
+    height: 169px;
+    border-radius: 50%;
+    margin-top: 50px;
+    z-index: 5;
+    position: absolute;
+    margin-left: 800px;
+    background-color:rgb(253, 204, 163) ;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.component7{
+    width: 189px;
+    height: 169px;
+    border-radius: 50%;
+    margin-top: 50px;
+    z-index: 4;
+    position: absolute;
+    margin-left: 960px;
+    background-color:rgb(206, 199, 198) ;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}

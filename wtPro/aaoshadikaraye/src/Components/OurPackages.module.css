@@ -1,0 +1,148 @@
+
+  
+  @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+  .mukta-regular {
+    font-family: "Mukta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  body{
+      font-family: "Mukta";
+  }
+  .container {
+    width: 1200px; /* Adjusted width to fit all divs in one line */
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between; /* Aligns items with equal space between them */
+    flex-wrap: wrap;
+  }
+  
+  .pkg {
+    width: calc(25% - 40px); /* 25% of container width minus margins */
+   height: 300px;
+    margin: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s;
+  }
+  
+  .pkg:hover {
+    transform: translateY(-10px);
+  }
+  
+  .pkg .front,
+  .pkg .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: opacity 0.3s;
+    border-radius: 15px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .pkg .front {
+    z-index: 2;
+    /* background-color: #808080;  */
+  }
+  
+  .pkg .back {
+    opacity: 0;
+    transform: rotateY(180deg);
+    z-index: 1;
+   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pkg:hover .front {
+    opacity: 0;
+  }
+  
+  .pkg:hover .back {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  
+  h2, h3, p {
+    margin: 5px 0;
+  }
+  
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .details {
+    display: none;
+    text-align: left;
+  }
+  
+  .pkg:hover .front .details {
+    display: none;
+  }
+  
+  .pkg:hover .back .details {
+    display: block;
+  }
+  
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  /* Customize colors based on package type */
+  .pkg1 .front {
+    background-image: url(https://i.etsystatic.com/5335043/r/il/f3480c/1924220164/il_570xN.1924220164_je2k.jpg);
+    
+  }
+  
+  .pkg2 .front {
+    background-image: url(https://5.imimg.com/data5/SELLER/Default/2023/2/HK/MT/TM/62715587/textured-sheet-with-designer-mdf-golden-wedding-card-500x500.jpg);
+  
+  }
+  
+  .pkg3 .front {
+    background-image: url(https://m.media-amazon.com/images/I/815Qz83bLyL._AC_UF1000,1000_QL80_.jpg);
+   
+  }
+  
+  #pkg4 .front {
+    background-image: url(https://wow-weddings.ie/wp-content/uploads/2022/03/Vintage-Lace-scaled.jpg);
+   background-size: cover;
+  }
+  
+  h1{
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+  }
+  #pkg1 .back {
+    background-color: #f6c7cf; /* Blue for Basic */
+  }
+  
+  #pkg2 .back {
+    background-color: #f1c40f; /* Yellow for Gold */
+  }
+  
+  #pkg3 .back {
+    background-color: #c0c0c0; /* Gray for Silver */
+  }
+  
+  #pkg4 .back {
+    background-color: #e5e4e2; /* Purple for Platinum */
+  }
