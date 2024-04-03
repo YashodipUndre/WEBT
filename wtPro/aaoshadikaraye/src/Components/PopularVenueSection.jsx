@@ -1,11 +1,7 @@
 import styles from "../Components/PopularVenue.module.css";
 import useCardSliderLogic from "./CardSliderLogic";
 import PopularVenueCards from "./PopularVenueCards";
-import {
-  FaChevronRight,
-  FaChevronCircleLeft,
-  FaChevronLeft,
-} from "react-icons/fa";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 const PopularVenueSection = ({ data }) => {
   const { scrollLeftHandler, scrollRightHandler } = useCardSliderLogic();
   return (
@@ -24,7 +20,7 @@ const PopularVenueSection = ({ data }) => {
           <FaChevronRight />
         </button>
       </div>
-      <div class="pagination" id="pagination">
+      <div className="pagination" id="pagination">
         <p id="page-numbers"></p>
       </div>
     </section>

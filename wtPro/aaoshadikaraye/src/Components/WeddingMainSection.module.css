@@ -18,11 +18,12 @@ button{
     align-items: start;
     margin-left: 88px;
 }
+
 .h2tag{
 	font-weight: 600;
 	font-size: larger;
 	margin-bottom: 0px;
-	font-size: 1.8em;
+	font-size: 23.8px;
     float: left;
 }
 .innerDiv{
@@ -40,7 +41,8 @@ button{
     margin-top: 50px;
     z-index: 10;
     position: absolute;
-    background-color: rgb(212, 164, 198);
+    /* background-color: rgb(212, 164, 198); */
+    background-image: linear-gradient(to right, #ffcccc, #ff99cc);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -67,7 +69,9 @@ button{
     z-index: 9;
     margin-left: 160px;
     position: absolute;
-    background-color:rgb(140, 201, 255) ;
+    /* background-color:rgb(140, 201, 255) ; */
+    background-image: linear-gradient(to right,  #ff9b9b,#ffcccc);
+
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -83,19 +87,50 @@ button{
     position: relative;
     margin-left: 320px;
     background-color:rgb(253, 199, 219) ;
+    /* background-image: linear-gradient(to right, #ffcccc, #c0c0c0); */
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .venueDiv{
-    width: 80%;
+    width: 30%;
     margin-left: 200px;
     display: grid;
     grid-template-columns: 50% 50%;
     z-index: 100;
-    background-color: white;
+    overflow: hidden; /* Ensure that content outside the div is hidden */
+    white-space: nowrap;
+    background-image: linear-gradient(to right, #ffcccc, #ff99cc);
+
+
+    animation: roll;
+    animation-duration: 3s;
+    transition: all 3s ease-in-out;
+    border-radius: 20%;
 }
+.venueDiv a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    padding-top: 36px;
+    transition: 0.5s all ease;
+}
+.venueDiv a:hover{
+    text-decoration: none;
+    transform: scale(1.2);
+    color: white;
+}
+@keyframes roll {
+    0% {
+      transform: translateX(0%);
+      width: 5%;
+    }
+    100% {
+      transform: translateX(1%);
+    }
+  }
 .temp{
     display: flex;
     flex-direction: row;
@@ -112,6 +147,7 @@ button{
     position: absolute;
     margin-left: 480px;
     background-color:rgb(200, 248, 161) ;
+    /* background-image: linear-gradient(to right, #ffcccc, #c8a2c8); */
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -126,7 +162,8 @@ button{
     z-index: 6;
     position: absolute;
     margin-left: 640px;
-    background-color:rgb(253, 255, 128) ;
+    /* background-color:rgb(253, 255, 128) ; */
+    background-image: linear-gradient(to right, #ffcccc, #ffd8bf);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -141,14 +178,17 @@ button{
     z-index: 5;
     position: absolute;
     margin-left: 800px;
-    background-color:rgb(253, 204, 163) ;
+     background-color:rgb(253, 204, 163) ;
+     
+     /* background-image: linear-gradient(to right, #ffcccc, #ffd700); */
+
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
+/* background-color:rgb(206, 199, 198) ; */
 .component7{
     width: 189px;
     height: 169px;
@@ -157,10 +197,40 @@ button{
     z-index: 4;
     position: absolute;
     margin-left: 960px;
-    background-color:rgb(206, 199, 198) ;
+    background-image: linear-gradient(to right, #faa1a1, #e7bef7);
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
    
 }
+/* Pink and White */
+.pink-and-white {
+    color: palevioletred; /* Pink */
+    background-color: white; /* White */
+  }
+  
+  /* Pink and Gold */
+  .pink-and-gold {
+    color: palevioletred; /* Pink */
+    background-color: gold; /* Gold */
+  }
+  
+  /* Pink and Mint Green */
+  .pink-and-mint-green {
+    color: palevioletred; /* Pink */
+    background-color: mintgreen; /* Mint Green */
+  }
+  
+  /* Pink and Lavender */
+  .pink-and-lavender {
+    color: palevioletred; /* Pink */
+    background-color: lavender; /* Lavender */
+  }
+  
+  /* Pink and Gray */
+  .pink-and-gray {
+    color: palevioletred; /* Pink */
+    background-color: gray; /* Gray */
+  }
+  
