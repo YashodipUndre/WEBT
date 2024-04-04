@@ -11,14 +11,15 @@ const WeddingCategoriesSection = () => {
     setIsVisible(!state);
   };
   async function OpenVenues(e) {
+    
+    history("/Venues");
     try {
       const ans = await axios.get(
         `http://localhost:8080/service/venues/${e.target.id}`
       );
       setServiceData(ans.data);
-      console.log(ans.data);
       localStorage.setItem("ServiceData", JSON.stringify(ans.data));
-      history("/Venues");
+      
     } catch (error) {
       console.log(error);
     }
