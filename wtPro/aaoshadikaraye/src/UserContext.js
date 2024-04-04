@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
    const data =  localStorage.getItem('auth') 
    const Servicedata =  localStorage.getItem('ServiceData') 
    console.log("Yash");
-   if(data){
+   if(Servicedata){
     const parseData = JSON.parse(Servicedata);
     setServiceData(parseData);
    }
