@@ -20,7 +20,7 @@ server.use(cors());
 server.use(bdp.json());
 server.use(bdp.urlencoded())
 const service = require('./Routers/service')
-
+const serachRouter = require('./Routers/Search');
 
 //DataBase
 main().catch(err => console.log(err))
@@ -84,7 +84,7 @@ passport.deserializeUser((id, done) => {
 //   res.sendFile(path.join(__dirname,'public', "index.html"));
 // });
 server.use('/service',service.router)
-
+server.use('/Search',serachRouter.router);
 //Auth Funtion
 server.post('/logout', (req, res) => {
     req.logout((err) => {

@@ -8,7 +8,39 @@ import { useNavigate } from "react-router-dom";
 import ProfileLogo from "./Images/icons8-person-100.png";
 import { useAuth } from "./UserContext";
 import axios from "axios";
+import SrImage from './Images/icons8-search-24.png'
+import SearchBar from "./Components/SearchBar";
+import './CSS/SearchBar.css';
+import LogoRingPink from "./Images/icons8-wedding-rings-64.png";
+import cross from './Images/icons8-cross-50.png'
 function NavBar({ onClick }) {
+  const [SearchData, setSearchData] = useState();
+  async function TextChanged(e) {
+    try {
+      const ans = await axios.get('http://localhost:8080/Search/All');
+      const FinalData = ans.data.filter((a) => {
+        return (
+          e.target.value && a && a.venue.toLowerCase().includes(e.target.value))
+      })
+      setSearchData(FinalData);
+    }
+    catch (error) {
+      console.log(error);
+    }
+    //  console.log(e.target.value);
+  }
+  const [srbar, setsrbar] = useState(false);
+  function ch(st) {
+    setsrbar(st);
+  }
+  function searchBar() {
+    if (srbar) {
+      setsrbar(false);
+    }
+    else {
+      setsrbar(true);
+    }
+  }
   const [user, authUser] = useAuth();
 
   function Opening() {
@@ -32,62 +64,106 @@ function NavBar({ onClick }) {
   // window.addEventListener("load",()=>{
   //     setWid("50px")
   // })
+  function closed(e) {
+    e.stopPropagation();
+    setsrbar(false)
+  }
   return (
-    <nav className="hor-navbar">
-      <section className="left-side">
-        <div className="logo-box">
-          <img className="logo" src={LogoRing} style={{ width: wid }} />
-          <h1>
-            <span>A</span>ao<span>S</span>haadi<span>K</span>araye
-          </h1>
-        </div>
-      </section>
+    <>
+      <nav className="hor-navbar">
+        <section className="left-side">
+          <div className="logo-box">
+            <img className="logo" src={LogoRing} style={{ width: wid }} />
+            <h1>
+              <span>A</span>ao<span>S</span>haadi<span>K</span>araye
+            </h1>
+          </div>
+        </section>
 
-      <section className="right-side">
-        <a href="/MainPage">Home</a>
-        <a href="">Stories</a>
-        <a href="">AboutUs</a>
-        <a href="">Contact</a>
-      </section>
-      <section className="end-side">
-        {!user && (
-          <>
-            <Link id={"ll"} to={"/SignUp"}>
-              <button>Sign-Up</button>
-            </Link>
-            <button id="MenuBarRes" onClick={Opening}>
-              <img src={MenuLogo} alt="" id="MenuBarResImg" />
-            </button>
-          </>
-        )}
-        {user && (
-          <>
-            <div className="search-bar">
-              <input type="text" placeholder="Search" />
-              <button id="sr">Search</button>
+        <section className="right-side">
+          <a href="/MainPage">Home</a>
+          <a href="">Stories</a>
+          <a href="">AboutUs</a>
+          <a href="">Contact</a>
+        </section>
+        <section className="end-side">
+          <div className="search-br">
+            <button id="sr" onClick={searchBar}>Search <img src={SrImage}></img></button>
+          </div>
+
+          {!user && (
+            <>
+              <Link id={"ll"} to={"/SignUp"}>
+                <button>Sign-Up</button>
+              </Link>
+              <button id="MenuBarRes" onClick={Opening}>
+                <img src={MenuLogo} alt="" id="MenuBarResImg" />
+              </button>
+            </>
+          )}
+          {user && (
+            <>
+
+              <div className="profile" onClick={toggleDropdown}>
+                <img src={ProfileLogo} alt="Profile" />
+                {isOpen && (
+                  <ul className="dr">
+                    <li>Hi,{user.username}</li>
+                    <li>Current Status</li>
+                    <li>Bookings</li>
+                    <li>
+                      <button onClick={Logout} id="LogOutBt">
+                        Logout
+                      </button>
+                    </li>
+                  </ul>
+                )}
+              </div>
+              <button id="MenuBarRes" onClick={Opening}>
+                <img src={MenuLogo} alt="" id="MenuBarResImg" />
+              </button>
+            </>
+          )}
+        </section>
+      </nav>
+      {
+        srbar && (<>
+          <div className='Main'>
+            <div className='ScMain'><img src={cross} alt="" onClick={closed} /></div>
+            <div className="search-bar-container">
+              <div className="SrAndic">
+
+              <div className='frDiv'><img src={LogoRingPink} alt="" /></div>
+
+              <input
+                type="text"
+                className="search-bar"
+                placeholder="Search for vendors, ideas, real wedding stories and more!"
+                onChange={TextChanged}
+              />
+              </div>
+              <div className="FrResult">
+              <div className="results-list">
+              {SearchData && SearchData.map((data)=>{
+                return(
+                  <div
+                className="search-result"
+              > 
+                 <img src={data.image}></img>
+                {data.venue}
+              </div>
+                )
+              })
+              }
             </div>
-            <div className="profile" onClick={toggleDropdown}>
-              <img src={ProfileLogo} alt="Profile" />
-              {isOpen && (
-                <ul className="dr">
-                  <li>Hi,{user.username}</li>
-                  <li>Current Status</li>
-                  <li>Bookings</li>
-                  <li>
-                    <button onClick={Logout} id="LogOutBt">
-                      Logout
-                    </button>
-                  </li>
-                </ul>
-              )}
             </div>
-            <button id="MenuBarRes" onClick={Opening}>
-              <img src={MenuLogo} alt="" id="MenuBarResImg" />
-            </button>
-          </>
-        )}
-      </section>
-    </nav>
+            </div>
+            
+          </div>
+
+        </>)
+      }
+    </>
   );
 }
 function SideMenu({ SIZEGETTER }) {
@@ -110,7 +186,7 @@ function SideMenu({ SIZEGETTER }) {
 }
 function MainDiv() {
   return (
-    <div className="Main" style={{ backgroundImage: `url(${backgroundImg})` }}>
+    <div className="MainD" style={{ backgroundImage: `url(${backgroundImg})` }}>
       <div className="Text">
         <h1>Shadi Karni He</h1>
         <h2>Ajao Kara Denge</h2>
