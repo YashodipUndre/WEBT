@@ -3,7 +3,7 @@ import "./CSS/SignUp.css";
 import LogoRingPink from "./Images/icons8-wedding-ring-64-pink.png";
 import { useState } from "react";
 import axios from "axios";
-import { useAuth } from "./UserContext";
+import { useAuth } from "./context/UserContext";
 import { useNavigate } from "react-router-dom";
 
 function Login() {

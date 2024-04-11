@@ -6,14 +6,18 @@ import backgroundImg from "./Images/center-point-events-03.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import ProfileLogo from "./Images/icons8-person-100.png";
-import { useAuth } from "./UserContext";
+import { useAuth } from "./context/UserContext";
 import axios from "axios";
 import SrImage from './Images/icons8-search-24.png'
 import SearchBar from "./Components/SearchBar";
 import './CSS/SearchBar.css';
 import LogoRingPink from "./Images/icons8-wedding-rings-64.png";
 import cross from './Images/icons8-cross-50.png'
+import { Avatar, Badge } from 'antd';
+import cartImg from './Images/icons8-cart-50.png'
+import { useCart } from "./context/CartContext";
 function NavBar({ onClick }) {
+  const [Cart,setCart] = useCart();
   const [SearchData, setSearchData] = useState();
   async function TextChanged(e) {
     try {
@@ -122,6 +126,10 @@ function NavBar({ onClick }) {
               <button id="MenuBarRes" onClick={Opening}>
                 <img src={MenuLogo} alt="" id="MenuBarResImg" />
               </button>
+              <Link to="/cart"> <Badge count={Cart ? Cart.length : 0} offset={[10, 10]}>
+                <img src={cartImg} id="cart"></img>
+              </Badge></Link>
+             
             </>
           )}
         </section>
@@ -133,32 +141,32 @@ function NavBar({ onClick }) {
             <div className="search-bar-container">
               <div className="SrAndic">
 
-              <div className='frDiv'><img src={LogoRingPink} alt="" /></div>
+                <div className='frDiv'><img src={LogoRingPink} alt="" /></div>
 
-              <input
-                type="text"
-                className="search-bar"
-                placeholder="Search for vendors, ideas, real wedding stories and more!"
-                onChange={TextChanged}
-              />
+                <input
+                  type="text"
+                  className="search-bar"
+                  placeholder="Search for vendors, ideas, real wedding stories and more!"
+                  onChange={TextChanged}
+                />
               </div>
               <div className="FrResult">
-              <div className="results-list">
-              {SearchData && SearchData.map((data)=>{
-                return(
-                  <div
-                className="search-result"
-              > 
-                 <img src={data.image}></img>
-                {data.venue}
+                <div className="results-list">
+                  {SearchData && SearchData.map((data) => {
+                    return (
+                      <div
+                        className="search-result"
+                      >
+                        <img src={data.image}></img>
+                        {data.venue}
+                      </div>
+                    )
+                  })
+                  }
+                </div>
               </div>
-                )
-              })
-              }
             </div>
-            </div>
-            </div>
-            
+
           </div>
 
         </>)

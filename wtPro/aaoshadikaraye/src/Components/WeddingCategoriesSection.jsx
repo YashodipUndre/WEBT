@@ -1,7 +1,7 @@
 import styles from "./WeddingMainSection.module.css";
 import { useState } from "react";
 import axios from "axios";
-import { useService } from "../ServiceDataContext";
+import { useService } from "../context/ServiceDataContext";
 import { useNavigate } from "react-router-dom";
 const WeddingCategoriesSection = () => {
   const history = useNavigate();

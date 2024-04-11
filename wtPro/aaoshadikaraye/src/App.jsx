@@ -4,14 +4,12 @@ import { NavBar, MainDiv, SideMenu } from './Lander';
 import { BrowserRouter as Router, Route, Routes, Switch, } from 'react-router-dom';
 import SignUp from './SignUp';
 import Login from './login';
-import UserContext, { useAuth } from './UserContext';
-import instance from './Cokkies';
-import axios from 'axios';
-import Home from './Home';
+import UserContext, { useAuth } from './context/UserContext';
 import MainPage from './MainPage';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Venues from "./Venues";
 import SimpleBackdrop from "./Loader";
+import Cart from "./Cart";
 function App() {
   const [auth,userAuth] = useAuth();
   const [SMBDSIZE, setSMBDSIZE] = useState("0px");
@@ -47,6 +45,9 @@ function FormData(formData){
         </>} />
         <Route  path="/Venues" element={<>
         <Venues></Venues>
+        </>} />
+        <Route path="/cart" element={<>
+        <Cart></Cart>
         </>} />
       </Routes>
     </Router>

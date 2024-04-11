@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './CSS/index.css';
 import App from './App';
-import { AuthProvider } from './UserContext';
-import { ServiecDataProvider } from './ServiceDataContext';
+import { AuthProvider } from './context/UserContext';
+import { ServiecDataProvider } from './context/ServiceDataContext';
+import { CartProvider } from './context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <CartProvider>
   <ServiecDataProvider>
   <AuthProvider>
   <React.StrictMode>
@@ -14,6 +16,7 @@ root.render(
   </React.StrictMode>
   </AuthProvider>
   </ServiecDataProvider>
+  </CartProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
