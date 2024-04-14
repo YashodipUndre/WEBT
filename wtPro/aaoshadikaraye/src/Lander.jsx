@@ -109,7 +109,18 @@ function NavBar({ onClick }) {
             <>
 
               <div className="profile" onClick={toggleDropdown}>
-                <img src={ProfileLogo} alt="Profile" />
+              <Avatar
+                  style={{
+                    backgroundColor:"white",
+                    verticalAlign: 'middle',
+                   
+                  }}
+                  size="large"
+                  className="Av"
+                  
+                >
+                  {user.username.toUpperCase()[0]}
+                </Avatar>
                 {isOpen && (
                   <ul className="dr">
                     <li>Hi,{user.username}</li>
