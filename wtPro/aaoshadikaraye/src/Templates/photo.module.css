@@ -1,16 +1,17 @@
 
 .card{
-  width: 27rem;
+  width: 22rem;
   text-decoration: none;
-   display: flex;
-   flex-direction: column;
-   margin-top: 30px;
-   height: 27em;
-   transition: all 0.3s ease-in-out;
-   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  height: 27em;
+  transition: all 0.3s ease-in-out;
+  border-radius: 20px;
 }
 .card:hover{
   background-color: white;
+  color: palevioletred;
 }
 .mainSection{
   display: grid;
@@ -57,7 +58,7 @@
 }
 .firstLine{
   display: grid;
-  grid-template-columns: 130px 140px;
+  grid-template-columns: 240px 100px;
   height: 40px;
 }
 
@@ -113,8 +114,8 @@
   font-size: 14px;
 }
 .mainOuter{
- padding: 8px 8px;
- background-color: aqua;
+padding: 8px 8px;
+background-color: aqua;
 }
 h3,h4,h5,strong{
   text-decoration: none;
