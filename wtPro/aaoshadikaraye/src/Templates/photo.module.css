@@ -15,7 +15,7 @@
 }
 .mainSection{
   display: grid;
-  grid-template-columns: 380px 380px 380px 380px;
+  grid-template-columns: 300px 300px 300px 300px;
   padding: 10px;
   margin-left:50px;
 }
@@ -58,7 +58,7 @@
 }
 .firstLine{
   display: grid;
-  grid-template-columns: 240px 100px;
+  grid-template-columns: 80px 80px;
   height: 40px;
 }
 

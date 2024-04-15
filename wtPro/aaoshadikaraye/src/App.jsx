@@ -79,18 +79,18 @@ function App() {
           }
         />
         <Route
-          path="/cart"
+          path="/Photo"
           element={
             <>
-              <Cart></Cart>
+              <Photo></Photo>
             </>
           }
         />
         <Route
-          path="/photo"
+          path="/cart"
           element={
             <>
-              <Photo />
+              <Cart></Cart>
             </>
           }
         />

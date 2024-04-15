@@ -5,7 +5,7 @@ import {
 } from "react-icons/fa6";
 import { CiLocationOn } from "react-icons/ci";
 import styles from "./template.module.css";
-const LowerSection = ({ venue, rating, location, type, veg, nonVeg,img }) => {
+const LowerSection = ({ venue, rating, location, type, price,venuetype ,img }) => {
   return (
     <div className={styles.lowerDiv}>
       <img src={img}className={styles.cardImage} alt="..."></img>
@@ -32,8 +32,15 @@ const LowerSection = ({ venue, rating, location, type, veg, nonVeg,img }) => {
         <div className={styles.rating}>
           <h5 className={styles.typeof}>
             <FaBuildingColumns className={styles.icon} />
-            {type}
+            {venuetype}
           </h5>
+        </div>
+        <div className={styles.block1}>
+          <h5 className={styles.customEditTLine}>Price</h5>
+          <h3 className={styles.price}>
+            <FaIndianRupeeSign className={styles.iconWidth} />
+            {price}
+          </h3>
         </div>
       </div>
     </div>

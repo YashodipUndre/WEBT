@@ -16,6 +16,7 @@ import cross from './Images/icons8-cross-50.png'
 import { Avatar, Badge } from 'antd';
 import cartImg from './Images/icons8-cart-50.png'
 import { useCart } from "./context/CartContext";
+import { LoaderIcon } from "react-hot-toast";
 function NavBar({ onClick }) {
   const [Cart,setCart] = useCart();
   const [SearchData, setSearchData] = useState();
@@ -57,7 +58,10 @@ function NavBar({ onClick }) {
     const ans = await axios.post("http://localhost:8080/logout");
     authUser(null);
     localStorage.setItem("auth", null);
-    //history('/MainPage');
+    history('/MainPage');
+    setCart([]);
+    localStorage.setItem("cartData",null);
+    
   }
 
   const [isOpen, setIsOpen] = useState(false);
@@ -174,6 +178,7 @@ function NavBar({ onClick }) {
                     )
                   })
                   }
+                  {!SearchData && <LoaderIcon></LoaderIcon>}
                 </div>
               </div>
             </div>

@@ -19,8 +19,10 @@ const UserModel = User.Model;
 server.use(cors());
 server.use(bdp.json());
 server.use(bdp.urlencoded())
+const AddToCartRouter = require('./Routers/addc');
 const service = require('./Routers/service')
 const serachRouter = require('./Routers/Search');
+
 
 //DataBase
 main().catch(err => console.log(err))
@@ -85,6 +87,7 @@ passport.deserializeUser((id, done) => {
 // });
 server.use('/service',service.router)
 server.use('/Search',serachRouter.router);
+server.use('/AddToCart',AddToCartRouter.router);
 //Auth Funtion
 server.post('/logout', (req, res) => {
     req.logout((err) => {

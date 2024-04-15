@@ -24,7 +24,7 @@ const Product = ({ pr, image, price, onRemove,rating,venue }) => {
         </div>
         </div>
       </div>
-      <div className="price">${price}</div>
+      <div className="price">{price} INR</div>
       {/* <button className="save-for-later" onClick={onSaveForLater}>
         Save for later
       </button> */}
@@ -38,15 +38,19 @@ const Product = ({ pr, image, price, onRemove,rating,venue }) => {
 const ShoppingCart = () => {
   const[Cart,setCart] = useCart();
   const[tt,sett]  =useState(0);
-  const [finalTotal, setFinalTotal] = useState(0);
-   useEffect(() => {
-    if(Cart){
-    let total = Cart.reduce((total, product) => total + product.vegPrice, 0);
-    total = finalTotal+total;
-    setFinalTotal(total);
-    console.log(total);
+  
+  let finalTotal=()=>{
+    try {
+      let total = 0;
+      Cart?.map(pr=>{
+         total=total +pr.price;
+      })
+      return total;
+    } catch (error) {
+      console.log(error)
     }
-  }, [Cart]);
+   
+  }
   const handleRemove = (id) => {
     const upDated = Cart.filter((p)=>p._id!==id);
     setCart(upDated);
@@ -66,15 +70,14 @@ const ShoppingCart = () => {
           pr={product.type}
           image={product.image}
           rating={product.rating}
-          price={product.vegPrice}
+          price={product.price}
           venue={product.venue}
           // onSaveForLater={() => handleSaveForLater(product)}
           onRemove={() => handleRemove(product._id)}
         />
       ))}
       <div className="sub-total">
-        Sub-Total: {finalTotal}
-        
+        Sub-Total: {finalTotal()}
       </div>
       <button className="checkout">Checkout</button>
     </div>

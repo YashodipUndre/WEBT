@@ -14,7 +14,7 @@
 }
 .mainSection{
   display: grid;
-  grid-template-columns: 380px 380px 380px 380px;
+  grid-template-columns: 300px 300px 300px 300px;
   padding: 10px;
   margin-left:50px;
 }
@@ -37,7 +37,7 @@
 }
 .price{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   font-size: 17px;
   display: inline-block;
 }
@@ -57,7 +57,7 @@
 }
 .firstLine{
   display: grid;
-  grid-template-columns: 130px 140px;
+  grid-template-columns: 110px 100px;
   height: 40px;
 }
 

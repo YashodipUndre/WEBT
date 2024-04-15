@@ -6,10 +6,27 @@ import { useNavigate } from "react-router-dom";
 const WeddingCategoriesSection = () => {
   const history = useNavigate();
   const [state, setIsVisible] = useState(false);
+
   const [serviceData, setServiceData] = useService("");
   const handleClick = () => {
     setIsVisible(!state);
   };
+  async function photo(e){
+     localStorage.setItem("ServiceData",null);
+     history("/Photo");
+    
+    try {
+      const ans = await axios.get(
+        `http://localhost:8080/service/Photos`
+      );
+      setServiceData(ans.data);
+      localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+      
+    } catch (error) {
+      console.log(error);
+    }
+    
+  }
   async function OpenVenues(e) {
     localStorage.setItem("ServiceData",null);
     history("/Venues");
@@ -66,7 +83,7 @@ const WeddingCategoriesSection = () => {
             <button className={styles.component3}>
               <p>Functions</p>
             </button>
-            <button className={styles.component4}>
+            <button className={styles.component4} onClick={photo} id="Photos">
               <p>Photos</p>
             </button>
             <button className={styles.component5}>

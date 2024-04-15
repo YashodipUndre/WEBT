@@ -1,8 +1,8 @@
-import { FaRegStar } from "react-icons/fa6";
+import { FaRegStar ,FaIndianRupeeSign} from "react-icons/fa6";
 import { MdMonochromePhotos } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
 import styles from "./photo.module.css";
-const LowerSection = ({ venue, rating, location, type, veg, nonVeg, img }) => {
+const LowerSectionPhoto = ({ venue, rating, location, photoType, price, img }) => {
   return (
     <div className={styles.lowerDiv}>
       <img src={img} className={styles.cardImage} alt="..."></img>
@@ -28,11 +28,11 @@ const LowerSection = ({ venue, rating, location, type, veg, nonVeg, img }) => {
         <div className={styles.rating}>
           <h5 className={styles.typeof}>
             <MdMonochromePhotos className={styles.icon} />
-            {type}
+            {photoType}
           </h5>
         </div>
       </div>
     </div>
   );
 };
-export default LowerSection;
+export default LowerSectionPhoto;

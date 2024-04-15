@@ -1,9 +1,9 @@
-import HeadingBar from "./Templates/HeadingBar";
-import Template from "./Templates/TemplateSection";
+
+import Venue from "./Templates/venue";
 function Venues() {
     return (
         <>      
-            <Template/></>
+           <Venue></Venue> </>
             
 
     )

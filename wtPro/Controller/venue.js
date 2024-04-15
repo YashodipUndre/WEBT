@@ -9,12 +9,12 @@ const path = require('path')
       
 }
 exports.getLawnsvanue = async(req,res)=>{
-    let Query =await venues.find({venuesType:'lawns'});
+    let Query =await venues.find({venueType:'lawns'});
     res.json(Query)
       
 }
 exports.getFarmHouseVenues=async(req,res)=>{
-    let Query =await venues.find({venuesType:'farmHouse'});
+    let Query =await venues.find({venueType:'farmHouse'});
     res.json(Query)
       
 }
