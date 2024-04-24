@@ -1,0 +1,1212 @@
+ 
+    * {
+      font-family: Proxima Nova, sans-serif;
+    }
+    .Footer {
+      background-color: #fff;
+    }
+
+    .Footer .container {
+      max-width: 1240px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .Footer .main-head {
+      font-size: 16px;
+      display: block;
+      width: 100%;
+    }
+
+    .Footer .fs-18 {
+      font-size: 18px;
+    }
+
+    .Footer .section-contact {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      border-bottom: 1px solid #d7d7d7;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+
+    .Footer .section-contact .section-left,
+    .Footer .section-contact .section-right {
+      -ms-flex: auto;
+      flex: auto;
+    }
+
+    .Footer .section-contact .section-left .footer-block-divider,
+    .Footer .section-contact .section-right .footer-block-divider {
+      margin: 0 10px;
+      width: 1px;
+      background-color: #909090;
+      height: 78px;
+    }
+
+    .dropdown-items-border .Footer .section-contact .sub-title,
+    .Footer .section-contact .dropdown-items-border .sub-title,
+    .Footer .section-contact .small {
+      font-size: 15px;
+    }
+
+    .Footer .section-contact .section-left {
+      padding-bottom: 25px;
+    }
+
+    .Footer .section-contact .section-right {
+      padding-top: 25px;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    .Footer .section-contact .section-right > div {
+      -ms-flex: 1 1;
+      flex: 1 1;
+    }
+
+    .Footer .section-contact .section-right > div:nth-child(2) {
+      padding: 0 50px;
+    }
+
+    .Footer .section-contact .section-right .btn {
+      display: inline-block;
+      height: 50px;
+      line-height: 50px;
+    }
+
+    .Footer
+      .section-contact
+      .section-right
+      .GlobalSearchModal
+      .PopularSearches
+      .searches
+      .hover-btn.popular-item:hover,
+    .Footer .section-contact .section-right .hover-btn.dropdown-item:hover,
+    .Footer .section-contact .section-right .hover-btn.text-primary:hover,
+    .Footer .section-contact .section-right .hover-btn.text-vendor:hover,
+    .GlobalSearchModal
+      .PopularSearches
+      .searches
+      .Footer
+      .section-contact
+      .section-right
+      .hover-btn.popular-item:hover {
+      color: #fff;
+    }
+
+    .Footer .follow-us .fa {
+      font-size: 20px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .Footer .follow-us .fa ~ span {
+      font-size: 15px;
+      color: #4a4a4a;
+      text-transform: capitalize;
+    }
+
+    .Footer .download-app-section .app-store,
+    .Footer .download-app-section .play-store {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .Footer .download-app-section .app-store > a,
+    .Footer .download-app-section .play-store > a {
+      display: inline-block;
+    }
+
+    .Footer .section-content,
+    .Footer .section-variable {
+      border-bottom: 1px solid #d7d7d7;
+    }
+
+    .Footer .section-constant,
+    .Footer .section-variable {
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    .Footer .section-constant .column-flex,
+    .Footer .section-variable .column-flex {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+    }
+
+    .Footer .section-constant .column-flex .child-link,
+    .Footer .section-variable .column-flex .child-link {
+      color: #909090;
+    }
+
+    .Footer .section-row {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+
+    .Footer .section-row .column-flex {
+      -ms-flex-direction: row;
+      flex-direction: row;
+      display: block;
+    }
+
+    .Footer .section-row .column-flex .section-row-child {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+
+    .Footer .section-row .column-flex .section-row-child .anchor-span {
+      width: 33.33333%;
+      display: block;
+      margin-top: 10px;
+      line-height: normal;
+    }
+
+    .dropdown-items-border
+      .Footer
+      .section-row
+      .column-flex
+      .section-row-child
+      .anchor-span
+      .sub-title,
+    .dropdown-items-border
+      .Footer
+      .section-row
+      .column-flex
+      .section-row-child
+      .anchor-span
+      a.sub-title,
+    .Footer
+      .section-row
+      .column-flex
+      .section-row-child
+      .anchor-span
+      .dropdown-items-border
+      .sub-title,
+    .Footer
+      .section-row
+      .column-flex
+      .section-row-child
+      .anchor-span
+      .dropdown-items-border
+      a.sub-title,
+    .Footer .section-row .column-flex .section-row-child .anchor-span .small,
+    .Footer
+      .section-row
+      .column-flex
+      .section-row-child
+      .anchor-span
+      a.small {
+      font-size: 15px;
+      color: #909090;
+      line-height: normal;
+    }
+
+    .Footer
+      .section-row
+      .column-flex
+      .section-row-child
+      .anchor-span:nth-child(3n - 1) {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .Footer .section-row .content-text {
+      font-size: 15px;
+    }
+
+    .Footer .section-row .content-text > p,
+    .Footer .section-row .content-text > ul {
+      margin-bottom: 20px;
+    }
+
+    .Footer .section-row .content-text > p + br,
+    .Footer .section-row .content-text > ul + br {
+      display: none;
+    }
+
+    .AboutSection .Footer .section-row .content-text h6,
+    .AboutSection
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h6.cnt,
+    .AboutSection
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h6.DateInput_input,
+    .Footer
+      .section-row
+      .content-text
+      .AboutSection
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h6.cnt,
+    .Footer
+      .section-row
+      .content-text
+      .AboutSection
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h6.DateInput_input,
+    .Footer .section-row .content-text .AboutSection h6,
+    .Footer .section-row .content-text .regular.text-bold,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .AboutSection
+      h6.cnt,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .text-bold.cnt,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .AboutSection
+      h6.DateInput_input,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .text-bold.DateInput_input,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .AboutSection
+      .Footer
+      .section-row
+      .content-text
+      h6.cnt,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      .text-bold.cnt,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .AboutSection
+      .Footer
+      .section-row
+      .content-text
+      h6.DateInput_input,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      .text-bold.DateInput_input {
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: normal;
+    }
+
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      strong,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      strong,
+    .Footer .section-row .content-text h3[id].regular.text-bold strong,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      strong,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      strong {
+      border-radius: 5px 5px 0 0;
+      background-color: #f7f7f7;
+      padding: 20px 20px 10px;
+      margin-bottom: -10px;
+      display: block;
+    }
+
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .active
+      h3.cnt[id].text-bold
+      + div[id],
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .active
+      h3.cnt[id].text-bold
+      + ol,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .active
+      h3.cnt[id].text-bold
+      + p,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .active
+      h3.cnt[id].text-bold
+      + ul,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      + div[id],
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      + ol,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      + p,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      + ul,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      + div[id],
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      + ol,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      + p,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      + ul,
+    .Footer .section-row .content-text h3[id].regular.text-bold + div[id],
+    .Footer .section-row .content-text h3[id].regular.text-bold + ol,
+    .Footer .section-row .content-text h3[id].regular.text-bold + p,
+    .Footer .section-row .content-text h3[id].regular.text-bold + ul,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      + div[id],
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      + ol,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      + p,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      + ul,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      + div[id],
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      + ol,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      + p,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      + ul {
+      background-color: #f7f7f7;
+      display: block;
+      border-radius: 0 0 5px 5px;
+      padding: 0 20px 20px;
+      margin-bottom: 20px;
+    }
+
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .active
+      h3.cnt[id].text-bold
+      + div[id]
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .active
+      h3.cnt[id].text-bold
+      + ol
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .active
+      h3.cnt[id].text-bold
+      + p
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .active
+      h3.cnt[id].text-bold
+      + ul
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      + div[id]
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      + ol
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      + p
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      + ul
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      + div[id]
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      + ol
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      + p
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      + ul
+      + br,
+    .Footer
+      .section-row
+      .content-text
+      h3[id].regular.text-bold
+      + div[id]
+      + br,
+    .Footer .section-row .content-text h3[id].regular.text-bold + ol + br,
+    .Footer .section-row .content-text h3[id].regular.text-bold + p + br,
+    .Footer .section-row .content-text h3[id].regular.text-bold + ul + br,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      + div[id]
+      + br,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      + ol
+      + br,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      + p
+      + br,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      + ul
+      + br,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      + div[id]
+      + br,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      + ol
+      + br,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      + p
+      + br,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      + ul
+      + br {
+      display: none;
+    }
+
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .active
+      h3.cnt[id].text-bold
+      + ol,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      .active
+      h3.cnt[id].text-bold
+      + ul,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      + ol,
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h3.cnt[id].text-bold
+      + ul,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      + ol,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h3.DateInput_input[id].text-bold
+      + ul,
+    .Footer .section-row .content-text h3[id].regular.text-bold + ol,
+    .Footer .section-row .content-text h3[id].regular.text-bold + ul,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      + ol,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h3.cnt[id].text-bold
+      + ul,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      + ol,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h3.DateInput_input[id].text-bold
+      + ul {
+      margin-top: 0;
+      padding-left: 40px;
+    }
+
+    .Footer
+      .section-row
+      .content-text
+      .vendor-dashboard-root
+      .vendor-sidenav-root
+      h2.text-bold.cnt,
+    .Footer
+      .section-row
+      .content-text
+      .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      h2.text-bold.DateInput_input,
+    .Footer .section-row .content-text h2.regular.text-bold,
+    .vendor-dashboard-root
+      .vendor-sidenav-root
+      .Footer
+      .section-row
+      .content-text
+      h2.text-bold.cnt,
+    .VendorLeads
+      .LeadsFilter
+      .DateRangeFilter
+      .DateRangePicker
+      .Footer
+      .section-row
+      .content-text
+      h2.text-bold.DateInput_input {
+      font-size: 18px;
+      line-height: normal;
+    }
+
+    .Footer .section-row .content-text br {
+      display: inline;
+    }
+
+    .Footer .section-row .content-text ul {
+      -webkit-padding-start: 20px;
+      padding-inline-start: 20px;
+    }
+
+    .Footer .section-row .content-text ul li {
+      margin-bottom: 5px;
+    }
+
+    .Footer .section-row.section-content,
+    .Footer .section-row.section-variable {
+      border-bottom: 0;
+    }
+
+    .Footer .section-row.section-content .column-flex,
+    .Footer .section-row.section-variable .column-flex {
+      -ms-flex-direction: row;
+      flex-direction: row;
+      display: block;
+      -ms-flex: 100% 1;
+      flex: 100% 1;
+    }
+
+    .dropdown-items-border .Footer .section-constant .sub-title,
+    .Footer .section-constant .dropdown-items-border .sub-title,
+    .Footer .section-constant .small {
+      font-size: 15px;
+      line-height: normal;
+    }
+
+    .Footer .tradmark {
+      background-color: #f7f7f7;
+    }
+
+    .Footer .section-footer {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      line-height: normal;
+      font-size: 15px;
+    }
+
+    .Footer .RecentBox .h4 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .Footer .RecentBox .items .SingleReviewItem {
+      border-radius: 5px;
+      -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+      background-color: #fff;
+      margin-top: 20px;
+    }
+
+    .Footer .RecentBox .items .SingleReviewItem .pic {
+      min-width: 80px;
+      height: 80px;
+      border-radius: 100px;
+      overflow: hidden;
+      -ms-flex-item-align: start;
+      align-self: flex-start;
+    }
+
+    .Footer .RecentBox .items .SingleReviewItem .pic > img {
+      -o-object-fit: cover;
+      object-fit: cover;
+      height: 100%;
+      width: 80px;
+      display: block;
+    }
+
+    .Footer .RecentBox .items .SingleReviewItem .details {
+      line-height: 1.5;
+      font-size: 15px;
+    }
+
+    .Footer .RecentBox .items .SingleReviewItem .details .title {
+      font-size: 16px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .Footer .RecentBox .items .SingleReviewItem .details span.pre-wrap {
+      white-space: normal;
+    }
+
+    .Footer .RecentBox .items .SingleReviewItem .details .reviewd {
+      font-size: 14px;
+      color: #909090;
+      margin-top: 10px;
+    }
+    body * {
+      color: inherit;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      outline: none;
+    }
+    .d-flex,
+    .f-sb-bw {
+      display: -ms-flexbox;
+      display: flex;
+    }
+    .f-sb-bw {
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    div {
+      display: block;
+      unicode-bidi: isolate;
+    }
+    .jguhHf {
+      font-family: proxima-nova, sans-serif;
+    }
+    .download-app-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .download-app-section {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .store-buttons {
+      margin-top: 10px; /* Adjust as needed */
+    }
+    .jguhHf {
+      font-family: proxima-nova, sans-serif;
+    }
+    .AboutSection h6,
+    .text-bold {
+      font-weight: 600;
+    }
+    body {
+      margin: 0;
+      color: #4a4a4a;
+      font-size: 14px;
+      min-height: 100%;
+      line-height: 26px;
+      font-weight: 400;
+    }
+    .Footer .section-contact .section-left,
+    .Footer .section-contact .section-right {
+      -ms-flex: auto;
+      flex: auto;
+    }
+    .padding-v-20 {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .Footer .section-contact .section-right > div {
+      -ms-flex: 1 1;
+      flex: 1 1;
+    }
+    .Footer .fs-18 {
+      font-size: 18px;
+    }
+    .Footer .main-head {
+      font-size: 16px;
+      display: block;
+      width: 100%;
+    }
+    .margin-b-20 {
+      margin-bottom: 20px;
+    }
+    .text-bold {
+      font-weight: 600;
+    }
+    .margin-b-10 {
+      margin-bottom: 10px;
+    }
+    .input-outlined {
+      width: 57%;
+      padding: 5px 10px;
+      border: 1px solid #d7d7d7;
+      background-color: transparent;
+    }
+    input,
+    textarea {
+      outline: none;
+    }
+    element.style {
+      height: 40px;
+      border: none;
+      border-radius: 0;
+    }
+    .bg-primary {
+      background-color: #e72e77;
+    }
+    .margin-t-20 {
+      margin-top: 20px;
+    }
+    .border-radius-5 {
+      border-radius: 5px !important;
+    }
+    .border-primary {
+      border: 1px solid #e72e77;
+    }
+    .text-primary {
+      color: #e72e77;
+    }
+    .margin-r-20 {
+      margin-right: 20px;
+    }
+
+    .padding-10-20 {
+      padding: 10px 20px;
+    }
+    .h6,
+    .vendor-dashboard-root .vendor-sidenav-root {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .inline-block {
+      display: inline-block;
+    }
+    .padding-v-50 {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .Footer .section-constant .small {
+      font-size: 15px;
+      line-height: normal;
+    }
+    .margin-t-10 {
+      margin-top: 10px;
+    }
+    .small {
+      font-size: 12px;
+      font-weight: 400;
+    }
+    .bg-white {
+      background-color: #fff;
+    }
+    .container {
+      margin: 0 auto;
+      padding: 0 40px;
+      width: 100%;
+    }
+    section {
+      display: block;
+    }
+    .padding-v-15 {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    section {
+      display: block;
+      unicode-bidi: isolate;
+    }
+    /* Global styles */
+.pointer {
+  cursor: pointer;
+}
+.text-primary {
+  color: #e72e77;
+}
+.text-vendor {
+  color: #3498db;
+}
+.h6 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Button styles */
+.animated-btn {
+              position: relative;
+              overflow: hidden;
+              z-index: 0;
+              padding: 0
+          }
+
+          .animated-btn:hover:after {
+              -webkit-transform: translateY(10%) translateX(-25px) rotate(-45deg);
+              transform: translateY(10%) translateX(-25px) rotate(-45deg)
+          }
+
+.animated-btn:after {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 500%;
+              height: 1000%;
+              background: rgba(0,0,0,.2);
+              z-index: -1;
+              -webkit-transform-origin: 0 0;
+              transform-origin: 0 0;
+              -webkit-transform: translateX(calc(20% - 25px)) translateY(10%) rotate(-45deg);
+              transform: translateX(calc(20% - 25px)) translateY(10%) rotate(-45deg);
+              -webkit-transform: translateY(10%) translateX(18%) rotate(-45deg);
+              transform: translateY(10%) translateX(18%) rotate(-45deg);
+              -webkit-transition: -webkit-transform .3s;
+              transition: -webkit-transform .3s;
+              transition: transform .3s;
+              transition: transform .3s,-webkit-transform .3s
+          }
+
+.hover-btn.text-primary:after {
+  background-color: #e72e77;
+}
+
+.hover-btn.text-vendor:after {
+  background-color: #3498db;
+}
+.border-vendor {
+  border: 1px solid #3498db;
+}
+.border-primary {
+  border: 1px solid #e72e77 !important;
+}
+.text-primary {
+  color: #e72e77 !important;
+}
+
+
+/* Margin and spacing */
+.margin-t-20 {
+  margin-top: 20px;
+}
+.margin-r-20 {
+  margin-right: 20px;
+}
+.padding-10-20 {
+  padding: 10px 20px;
+}
+.inline-block {
+  display: inline-block;
+}
+a:hover {
+  text-decoration: none ;
+  color: rgb(255, 0, 187);
+}
+
+.margin-t-20 .animated-btn.hover-btn:hover {
+  color: white !important;
+}

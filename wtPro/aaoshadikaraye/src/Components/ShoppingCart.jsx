@@ -5,8 +5,10 @@ import {
   FaBuildingColumns,
   FaIndianRupeeSign,
 } from "react-icons/fa6";
-import Alerts from "./Alert";
+import { Toaster, toast } from "react-hot-toast";
 import { useCart } from "../context/CartContext";
+import OurPackages from "./OurPackages";
+import WeddingCategoriesSection from "./WeddingCategoriesSection";
 const Product = ({ pr, image, price, onRemove,rating,venue }) => {
   return (
     <div className="item">
@@ -54,13 +56,14 @@ const ShoppingCart = () => {
   const handleRemove = (id) => {
     const upDated = Cart.filter((p)=>p._id!==id);
     setCart(upDated);
-    alert(`${id} Removed`);
+    toast.success(`Removed Succesfully`);
     const item=JSON.parse(localStorage.getItem('cartData'))
     localStorage.setItem('cartData',JSON.stringify(item.filter((p)=>p._id!=id)))
   };
 
   return (
     <>
+    <div><Toaster></Toaster></div>
     <div className="Main-Cart">
     {Cart ?
     <div className="shopping-cart">
@@ -82,7 +85,11 @@ const ShoppingCart = () => {
       <button className="checkout">Checkout</button>
     </div>
     :<h5>Noting here</h5>}
-    </div></>
+    </div>
+    <WeddingCategoriesSection></WeddingCategoriesSection>
+    <OurPackages></OurPackages>
+
+    </>
   );
 };
 

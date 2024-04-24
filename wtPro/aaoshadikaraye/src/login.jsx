@@ -1,12 +1,13 @@
 import { NavBar, SideMenu } from "./Lander";
-import "./CSS/SignUp.css";
+import "./CSS/login.css";
 import LogoRingPink from "./Images/icons8-wedding-ring-64-pink.png";
 import { useState } from "react";
 import axios from "axios";
 import { useAuth } from "./context/UserContext";
 import { useNavigate } from "react-router-dom";
-
+import { useWedding } from "./context/weddingContext";
 function Login() {
+  const [weduser,setWedUser] = useWedding();
   const [SMBDSIZE, setSMBDSIZE] = useState("0px");
   function SideMenuLoader() {
     if (SMBDSIZE === "0px") {
@@ -34,7 +35,7 @@ function Login() {
     try {
       const ans = await axios.post("http://localhost:8080/login", formData);
       if (ans.data._id) {
-        console.log(ans.data);
+
         authUser(ans.data);
         localStorage.setItem("auth", JSON.stringify(ans.data));
         history("/MainPage");

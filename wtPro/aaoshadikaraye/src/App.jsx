@@ -8,6 +8,7 @@ import {
   Switch,
 } from "react-router-dom";
 import SignUp from "./SignUp";
+import Maintemplate from "./Components/MainTemplate";
 import Login from "./login";
 import UserContext, { useAuth } from "./context/UserContext";
 import MainPage from "./MainPage";
@@ -16,6 +17,11 @@ import Venues from "./Venues";
 import SimpleBackdrop from "./Loader";
 import Cart from "./Cart";
 import Photo from "./Templates/Photo";
+import Makeups from "./Templates/Makeup";
+import Clothing from "./Templates/Clothing";
+import Deco from "./Templates/Decoration";
+import Food from "./Templates/Food";
+import WeddingReg from "./WeddingReg";
 function App() {
   const [auth, userAuth] = useAuth();
   const [SMBDSIZE, setSMBDSIZE] = useState("0px");
@@ -91,6 +97,54 @@ function App() {
           element={
             <>
               <Cart></Cart>
+            </>
+          }
+        />
+         <Route
+          path="/makeup"
+          element={
+            <>
+              <Makeups></Makeups>
+            </>
+          }
+        />
+         <Route
+          path="/clothing"
+          element={
+            <>
+              <Clothing></Clothing>
+            </>
+          }
+        />
+         <Route
+          path="/deco"
+          element={
+            <>
+              <Deco></Deco>
+            </>
+          }
+        />
+        <Route
+          path="/food"
+          element={
+            <>
+              <Food></Food>
+            </>
+          }
+        />
+           <Route
+          path="/weddingReg"
+          element={
+            <>
+              <WeddingReg></WeddingReg>
+            </>
+          }
+        />
+        <Route
+          path="/MainTemplate"
+          element={
+            <>
+              <Maintemplate></Maintemplate>
             </>
           }
         />

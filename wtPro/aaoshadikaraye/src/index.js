@@ -5,9 +5,10 @@ import App from './App';
 import { AuthProvider } from './context/UserContext';
 import { ServiecDataProvider } from './context/ServiceDataContext';
 import { CartProvider } from './context/CartContext';
-
+import { WeddingProvider } from './context/weddingContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <WeddingProvider>
   <CartProvider>
   <ServiecDataProvider>
   <AuthProvider>
@@ -17,6 +18,7 @@ root.render(
   </AuthProvider>
   </ServiecDataProvider>
   </CartProvider>
+  </WeddingProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

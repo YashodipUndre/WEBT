@@ -1,4 +1,4 @@
-const venuesMd = require('../Model/vanue');
+const venuesMd = require('../Model/service');
 const vnModel = venuesMd.Model;
 exports.getSearchv=async(req,res)=>{
       const AllData =await vnModel.find();

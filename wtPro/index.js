@@ -22,7 +22,7 @@ server.use(bdp.urlencoded())
 const AddToCartRouter = require('./Routers/addc');
 const service = require('./Routers/service')
 const serachRouter = require('./Routers/Search');
-
+const WeddingRouter = require('./Routers/WeddingReg');
 
 //DataBase
 main().catch(err => console.log(err))
@@ -79,6 +79,13 @@ passport.deserializeUser((id, done) => {
             return done(null, false);
         })
 })
+function isauth(req, res, done) {
+    if (req.user) {
+        console.log(req.user);
+        return done();
+    }
+    return res.json({loggedin:false});
+}
 //server.use(express.static('public'));
 //Static for react files
 // server.use(express.static('public'));       
@@ -88,6 +95,7 @@ passport.deserializeUser((id, done) => {
 server.use('/service',service.router)
 server.use('/Search',serachRouter.router);
 server.use('/AddToCart',AddToCartRouter.router);
+server.use('/Wedding',WeddingRouter.router);
 //Auth Funtion
 server.post('/logout', (req, res) => {
     req.logout((err) => {
@@ -106,14 +114,7 @@ server.post('/login',
        
     });
 
-function isauth(req, res, done) {
-    if (req.user) {
-        console.log(req.user);
-        return done();
-        
-    }
-    return res.json({loggedin:false});
-}
+
 server.get('/UserProfile',isauth,(req,res)=>{
     res.json(req.user);
 })

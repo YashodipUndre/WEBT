@@ -1,0 +1,30 @@
+.WedRegMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.WedRegMainSub{
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px 10px rgba(0, 0, 0, 0.1);
+}
+Form{
+    margin-top: 10px;
+}
+.Count{
+    width: 1300px;
+    margin-top: -20px;
+    background-image: url('https://cdn0.weddingwire.in/article/0695/3_2/1280/jpeg/95960-colour-coordinated-outfits-samaira-sandhu-divine-mantra-pink.webp');
+    height: 350px;
+    background-size: contain;
+    background-position: center;
+}
+.countDown
+{
+    color: white;
+    font-size: 6em;
+    -webkit-text-stroke: 0.1vb black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200px;
+}

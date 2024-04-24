@@ -4,14 +4,14 @@
     display: flex;
     top: 0;
     z-index: 100;
-    overflow: auto;
+    overflow:auto;
     justify-content: center;
     align-items: center;
     background-color: rgba(148, 146, 146, 0.4);
 }
 
 body {
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .popupInner {
@@ -111,9 +111,8 @@ body {
 }
 
 .termsAndcon {
-    display: flex;
-    align-items: center;
-
+    display:grid;
+    grid-template-rows: 40px 1fr;
 }
 
 .login {
@@ -127,8 +126,12 @@ body {
     color: #8ACDD7
 }
 
-#LastDiv {
-    display: block;
+.LastDiv {
+    display:block;
+}
+.term{
+    display: inline-block;
+    margin-left: 0px;
 }
 
 .h2tag {

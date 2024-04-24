@@ -27,6 +27,70 @@ const WeddingCategoriesSection = () => {
     }
     
   }
+  async function Clothing(e){
+    localStorage.setItem("ServiceData",null);
+    history("/clothing");
+   
+   try {
+     const ans = await axios.get(
+       `http://localhost:8080/service/clothing`
+     );
+     setServiceData(ans.data);
+     localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+     
+   } catch (error) {
+     console.log(error);
+   }
+   
+ }
+ async function makeup(e){
+  localStorage.setItem("ServiceData",null);
+  history("/makeup");
+ 
+ try {
+   const ans = await axios.get(
+     `http://localhost:8080/service/makeup`
+   );
+   setServiceData(ans.data);
+   localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+   
+ } catch (error) {
+   console.log(error);
+ }
+ 
+}
+async function decoration(e){
+  localStorage.setItem("ServiceData",null);
+  history("/deco");
+ 
+ try {
+   const ans = await axios.get(
+     `http://localhost:8080/service/deco`
+   );
+   setServiceData(ans.data);
+   localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+   
+ } catch (error) {
+   console.log(error);
+ }
+ 
+}
+async function food(e){
+  localStorage.setItem("ServiceData",null);
+  history("/food");
+ 
+ try {
+   const ans = await axios.get(
+     `http://localhost:8080/service/food`
+   );
+   setServiceData(ans.data);
+   localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+   
+ } catch (error) {
+   console.log(error);
+ }
+ 
+}
   async function OpenVenues(e) {
     localStorage.setItem("ServiceData",null);
     history("/Venues");
@@ -55,29 +119,29 @@ const WeddingCategoriesSection = () => {
               All Types
             </a>
             <a href="#" id="lawns" onClick={OpenVenues}>
-              lawns
+              Lawns
             </a>
             <a href="#" id="FarmHouse" onClick={OpenVenues}>
               FarmHouse
             </a>
-            <a href="#" id="" onClick={OpenVenues}>
-              All Types
+            <a href="#" id="banquet hall" onClick={OpenVenues}>
+            BanquetHall
             </a>
-            <a href="#" id="" onClick={OpenVenues}>
-              All Types
+            <a href="#" id="lounge" onClick={OpenVenues}>
+            Lounge
             </a>
-            <a href="#" id="" onClick={OpenVenues}>
-              All Types
+            <a href="#" id="weddingresort" onClick={OpenVenues}>
+            WeddingResort
             </a>
           </div>
         )}
         {!state && (
           <div className={styles.temp}>
-            <button href="#" className={styles.component1}>
+            <button href="#" className={styles.component1} onClick={decoration}>
               <p>Decor</p>
             </button>
 
-            <button className={styles.component2}>
+            <button className={styles.component2} onClick={food}>
               <p>Food</p>
             </button>
             <button className={styles.component3}>
@@ -86,10 +150,10 @@ const WeddingCategoriesSection = () => {
             <button className={styles.component4} onClick={photo} id="Photos">
               <p>Photos</p>
             </button>
-            <button className={styles.component5}>
+            <button className={styles.component5} onClick={makeup}>
               <p>Makeup</p>
             </button>
-            <button className={styles.component7}>
+            <button className={styles.component7} onClick={Clothing}>
               <p>Clothing</p>
             </button>
           </div>

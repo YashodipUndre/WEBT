@@ -2,7 +2,11 @@ import styles from "../Components/PopularVenue.module.css";
 import useCardSliderLogic from "./CardSliderLogic";
 import PopularVenueCards from "./PopularVenueCards";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useService } from "../context/ServiceDataContext";
 const PopularVenueSection = ({ data }) => {
+  
   const { scrollLeftHandler, scrollRightHandler } = useCardSliderLogic();
   return (
     <section className={styles.popularVenueSection}>
@@ -13,7 +17,7 @@ const PopularVenueSection = ({ data }) => {
             <FaChevronLeft />
           </button>
           {data.map((data) => (
-            <PopularVenueCards key={data.type} data={data} />
+            <PopularVenueCards key={data.type} data={data}/>
           ))}
         </div>
         <button className={styles.next} onClick={scrollRightHandler}>

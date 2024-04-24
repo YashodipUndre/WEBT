@@ -17,9 +17,35 @@ import { Avatar, Badge } from 'antd';
 import cartImg from './Images/icons8-cart-50.png'
 import { useCart } from "./context/CartContext";
 import { LoaderIcon } from "react-hot-toast";
+import { useWedding } from "./context/weddingContext";
+
 function NavBar({ onClick }) {
-  const [Cart,setCart] = useCart();
+  const [user, authUser] = useAuth('');
+  const [Cart, setCart] = useCart();
+  const [weduser, setWedUser] = useWedding();
   const [SearchData, setSearchData] = useState();
+  const history = useNavigate();
+  function wedding() {
+    try {
+      axios.post("http://localhost:8080/Wedding/Check", {email:user.email})
+        .then(response => {
+          // Handle success
+          console.log(response.data);
+          setWedUser(response.data);
+          localStorage.setItem('wed', JSON.stringify(response.data))
+          history('/WeddingReg')
+          // Do something with the response data
+        })
+        .catch(error => {
+          // Handle error
+          console.error("Error:", error);
+          // Do something with the error
+        });
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
   async function TextChanged(e) {
     try {
       const ans = await axios.get('http://localhost:8080/Search/All');
@@ -46,22 +72,23 @@ function NavBar({ onClick }) {
       setsrbar(true);
     }
   }
-  const [user, authUser] = useAuth();
 
   function Opening() {
     onClick();
   }
   const [wid, setWid] = useState("50px");
 
-  const history = useNavigate();
+
   async function Logout() {
     const ans = await axios.post("http://localhost:8080/logout");
     authUser(null);
+    setWedUser(null);
     localStorage.setItem("auth", null);
+    localStorage.setItem('wed', null);
     history('/MainPage');
     setCart([]);
-    localStorage.setItem("cartData",null);
-    
+    localStorage.setItem("cartData", null);
+
   }
 
   const [isOpen, setIsOpen] = useState(false);
@@ -113,23 +140,23 @@ function NavBar({ onClick }) {
             <>
 
               <div className="profile" onClick={toggleDropdown}>
-              <Avatar
+                <Avatar
                   style={{
-                    backgroundColor:"white",
+                    backgroundColor: "white",
                     verticalAlign: 'middle',
-                   
+
                   }}
                   size="large"
                   className="Av"
-                  
+
                 >
                   {user.username.toUpperCase()[0]}
                 </Avatar>
                 {isOpen && (
                   <ul className="dr">
                     <li>Hi,{user.username}</li>
-                    <li>Current Status</li>
-                    <li>Bookings</li>
+                    <Link to='/cart' style={{ textDecoration: 'none', color: 'black' }}><li>Current Status</li></Link>
+                    <li style={{ textDecoration: 'none', color: 'black' }}><button onClick={wedding}>Wedding</button></li>
                     <li>
                       <button onClick={Logout} id="LogOutBt">
                         Logout
@@ -144,7 +171,7 @@ function NavBar({ onClick }) {
               <Link to="/cart"> <Badge count={Cart ? Cart.length : 0} offset={[10, 10]}>
                 <img src={cartImg} id="cart"></img>
               </Badge></Link>
-             
+
             </>
           )}
         </section>
@@ -227,3 +254,4 @@ function MainDiv() {
   );
 }
 export { NavBar, MainDiv, SideMenu };
+

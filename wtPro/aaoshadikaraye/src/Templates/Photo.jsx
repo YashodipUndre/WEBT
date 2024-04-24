@@ -10,6 +10,7 @@ import { Toaster, toast } from "react-hot-toast";
 import axios from "axios";
 import { useAuth } from "../context/UserContext";
 import LowerSectionPhoto from "./loweSectionofPhotoCard";
+import RightSide from "./rightSideHeadingBar";
 const Photo = () => {
   const [user, authUser] = useAuth();
   const [Cart,setCart] = useCart();
@@ -20,7 +21,7 @@ const Photo = () => {
      localStorage.setItem('cartData',JSON.stringify([...Cart,item]));
      const data = {
       'username':user.username,
-      'product_id':item._id,
+      'product_code':item._id,
       'type':item.type
      }
      try {
@@ -44,6 +45,7 @@ const Photo = () => {
     <>
        <div><Toaster></Toaster></div>
       <NavBar onClick={SideMenuLoader}></NavBar>
+      <RightSide></RightSide>
       <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
       <section className={styles.mainSection}>
       {serviceData ? serviceData.map((value) => (

@@ -23,7 +23,6 @@
 
 .cardImage{
   height: 65%;
-  overflow: hidden;
   object-fit: cover; 
   border-radius: 15px;
 }
@@ -41,6 +40,7 @@
   flex-direction: row;
   font-size: 17px;
   display: inline-block;
+  margin-right: 20px;
 }
 .lowerDiv{
   display: flex;
@@ -53,8 +53,6 @@
 .lowerDiv:hover{
   transform: scale(1.1);
   transition: 1s;
-
-  
 }
 .firstLine{
   display: grid;
@@ -112,6 +110,7 @@
 }
 .customEditTLine{
   font-size: 14px;
+  margin-top: 40px;
 }
 .mainOuter{
 padding: 8px 8px;

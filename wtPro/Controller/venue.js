@@ -1,10 +1,10 @@
 
-const model= require("../Model/vanue")
+const model= require("../Model/service")
 const venues=model.Model; 
 const ejs = require('ejs')
 const path = require('path')
  exports.getVenues = async(req,res)=>{
-    let Query =await venues.find();
+    let Query =await venues.find({type:'venue'});
     res.json(Query)
       
 }
@@ -14,25 +14,23 @@ exports.getLawnsvanue = async(req,res)=>{
       
 }
 exports.getFarmHouseVenues=async(req,res)=>{
-    let Query =await venues.find({venueType:'farmHouse'});
+    let Query =await venues.find({venueType:'farmhouse'});
     res.json(Query)
       
 }
-
-exports.getAdd=async(req,res)=>{
-    const newTem = await ejs.renderFile(path.resolve(__dirname,"../form.ejs"))
-    res.send(newTem);
+exports.getWeddingResort=async(req,res)=>{
+    const newTem = await venues.find({venueType:'weddingresort'});
+    res.json(newTem);
 }
 
-exports.getProductsSsr = async(req,res)=>{
-    Products.find()
-    .then(async function (models) {
-      const newTem=await ejs.renderFile(path.resolve(__dirname,"../index.ejs"),{Products:models})
-      res.send(newTem);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
+exports.getLounge = async(req,res)=>{
+    const newTem = await venues.find({venueType:'lounge'});
+    res.json(newTem);
+      
+}
+exports.getbanquethall = async(req,res)=>{
+    const newTem = await venues.find({venueType:'banquet hall'});
+    res.json(newTem);
       
 }
 

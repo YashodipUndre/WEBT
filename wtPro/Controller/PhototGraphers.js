@@ -1,7 +1,7 @@
 
-const model= require("../Model/PhotoGraphers")
-const PhoModel=model.Model; 
+const model= require("../Model/service")
+const Model=model.Model; 
  exports.getPhotoGraphers = async(req,res)=>{
-    let Query =await PhoModel.find();
+    let Query =await Model.find({type:'Photographers'});
     res.json(Query)
 }

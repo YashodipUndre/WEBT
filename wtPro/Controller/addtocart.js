@@ -1,9 +1,7 @@
 const model = require('../Model/AddToCartModel')
 const cartModel = model.Model
-const md = require('../Model/vanue')
+const md = require('../Model/service')
 const venueModel = md.Model;
-const mod = require('../Model/PhotoGraphers')
-const PhotoModel = mod.Model;
 exports.addItems = async(req,res)=>{
     try{
         const data = new cartModel(req.body);
@@ -20,22 +18,31 @@ exports.addItems = async(req,res)=>{
 exports.getItems=async(req,res)=>{
     let arr;
         try{
-            let vanue;
             let photo;
-            const data = await cartModel.find({username:req.body.username});
-            data?.map(async(item)=>{
-                if(item.type=='venue'){
-                  vanue=await venueModel.find({_id:item.product_id})
-                }
-                if(item.type=='Photographers'){
-                    photo=await PhotoModel.find({_id:item.product_id})
-                    
-                }
+            const data = await cartModel.find({username:req.body.username}).select('product_code');
+            const megaData = data?.map((item)=>{
+                return(
+                    item._id
+                )
             })
-            res.json(vanue)
-         }
+            const venue= await venueModel.aggregate([
+                {
+                  $match: {
+                    $or:[megaData]
+                  }
+                },
+                {
+                  "$project": {
+                    _id: 1,
+                    title: 1
+                  }
+                }
+            ]
+              )
+            res.json(venue);
+        }
          catch(error){
-          console.log(error);
+          console.log(error)
          }
    
   

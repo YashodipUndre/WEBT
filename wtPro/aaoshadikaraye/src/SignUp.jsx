@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import  "./CSS/SignUp.css"
+import styles from  "./CSS/SignUp.module.css"
 import { NavBar, SideMenu } from './Lander';
 import LogoRingPink from './Images/icons8-wedding-ring-64-pink.png';
 import axios from 'axios';
@@ -47,44 +47,97 @@ function SignUp(){
 
   return (
     <div>
-   <NavBar onClick={SideMenuLoader}></NavBar>
-      <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
-    <div className="popup">
-        <div className="popupInner">
-          <div className="popSt"><p>{constent}</p></div>
-        <img className="log" alt={LogoRingPink}src={LogoRingPink} style={{width:'50px'}}/>
-      <h2 className="h2tag">AaoShaadiKaraye</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name" >Name:</label>
-          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+      <NavBar onClick={SideMenuLoader} />
+      <SideMenu SIZEGETTER={SMBDSIZE} />
+      <div className={styles.popup}>
+        <div className={styles.popupInner}>
+          <div className={styles.popSt}>
+            <p>{constent}</p>
+          </div>
+          <img
+            className={styles.log}
+            alt="Logo"
+            src={LogoRingPink}
+            style={{ width: '50px' }}
+          />
+          <h2 className={styles.h2tag}>AaoShaadiKaraye</h2>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="mobile">Mobile Number:</label>
+              <input
+                type="tel"
+                id="mobile"
+                name="mobilenumber"
+                pattern="[0-9]{10}"
+                value={formData.mobilenumber}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="username">Username:</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            {/* <div className={styles.termsAndCon}>
+              <input
+                type="checkbox"
+                className={styles.term}
+                name="terms"
+                id='terms'
+                checked={formData.terms}
+                onChange={handleChange}
+                required
+              />
+              <label htmlFor="term">I agree to the terms and conditions</label>
+            </div> */}
+            <div className={styles.LastDiv}>
+              <button type="submit" >Register</button>
+              <Link id={styles.login} className={styles.login} to="/login">
+                Already have an account?
+              </Link>
+            </div>
+          </form>
         </div>
-        <div>
-          <label htmlFor="email" >Email:</label>
-          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="mobile" >Mobile Number:</label>
-          <input type="tel" id="mobile" name="mobilenumber" pattern="[0-9]{10}" value={formData.mobilenumber} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input type="text" id="username" name="username" value={formData.username} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} required />
-        </div>
-        <div className='termsAndcon'>
-          <input type="checkbox" id="terms" name="terms" checked={formData.terms} onChange={handleChange} required />
-          <label htmlFor="terms">I agree to the terms and conditions</label>
-        </div>
-        <div id='LastDiv'>
-          <button type="submit">Register</button>
-          <Link id={'login'} className="login" to={'/login'}>Already have an account ?</Link>
-        </div>
-      </form>
-      </div>
       </div>
     </div>
   );
