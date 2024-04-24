@@ -1,37 +1,58 @@
-.search{
-  width: 200px;
-  height: 40px;
-  border: 1px solid #ccc;
-  display: grid;
-  grid-template-columns: 20px 150px;
-  margin-top: 18px;
-}
-
-.searchBox{
+/* Styles for the filter button */
+button {
+  font-size: 16px;
+  background-color: #FF90BC;
   border: none;
-  height: 90%;
-  width: 140px;
-  margin-left: 20px;
-  display: inline-block;
-  background-color: transparent;
-}
-.icon{
-  display: inline-block;
-  margin-top: 18px;
-  margin-left: 8px;
-}
-.icon1{
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 25px;
+  height: 40px;
+  width: 100px;
 }
 
-.option{
-  display:flex;
-  flex-direction: row;
-  text-decoration: none;
-  gap: 28px;
-  margin-top: 10px;
-  margin-left: 10px;
+button:hover {
+  background-color: #8ACDD7;
+}
 
+/* Styles for the filter container */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-right: 200px;
+}
+
+/* Styles for each filter section */
+.filter-section {
+  flex: 1 1 45%; /* Adjust width of filter sections */
+  margin-bottom: 10px;
+}
+
+/* Styles for labels */
+label {
+  font-weight: bold;
+}
+
+/* Styles for select dropdowns */
+select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Styles for options within select dropdowns */
+select option {
+  padding: 5px;
+}
+
+/* Styles for the default option */
+select option:first-child {
+  color: #999;
 }

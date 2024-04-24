@@ -2,56 +2,54 @@ import { IoSearch, IoGridOutline } from "react-icons/io5";
 import { FaList } from "react-icons/fa";
 import styles from "./rightside.module.css";
 import { useService } from "../context/ServiceDataContext";
-const RightSide = () => {
+import React, { useState } from 'react';
+const RightSide = ({ onFilterChange }) => {
+  const [selectedCity, setSelectedCity] = useState('');
+  const [selectedPrice, setSelectedPrice] = useState('');
   const [serviceData, setServiceData] = useService();
-  function SubSearch(e){
-    let data =serviceData.filter((item)=>{
-            return(
-              e.target.value && item && item.venue.toLowerCase().includes(e.target.value)
-            );
-          })
-          if(data===null){
-            data =  localStorage.getItem('ServiceData')
-            data=JSON.parse(data);
-          }
-          setServiceData(data);
-          // data = JSON.stringify(data);
-        //  localStorage.setItem('subsearchdata',data);
-  }
+
+  const cities = ["Mumbai", "Delhi", "Bangalore", "Kolkata", "Chennai", "Hyderabad", "Pune", "Ahmedabad", "Jaipur", "Lucknow"];
+  const prices = ["20000", "50000", "100000", "200000", "500000", "1000000"];
+
+  const handleCityChange = (event) => {
+    const city = event.target.value;
+    setSelectedCity(city);
+  };
+
+  const handlePriceChange = (event) => {
+    const price = event.target.value;
+    setSelectedPrice(price);
+  };
+
+  const handleFilter = () => {
+    onFilterChange({ city: selectedCity, price: selectedPrice });
+  };
+
   return (
-    <>
-      <div className={styles.search}>
-        <div className={styles.icon1}>
-          <IoSearch />
-        </div>
-
-        <input
-          className={styles.searchBox}
-          type="text"
-          placeholder="Search"
-          onChange={SubSearch}
-        ></input>
+    <div className="filter-container">
+      <div className="filter-section">
+        <label htmlFor="cityFilter">Filter by City:</label>
+        <select id="cityFilter" value={selectedCity} onChange={handleCityChange}>
+          <option value="">All Cities</option>
+          {cities.map(city => (
+            <option key={city} value={city}>{city}</option>
+          ))}
+        </select>
       </div>
-      <a className={styles.option} href="#">
-        <div className={styles.icon}>
-          <FaList />
-        </div>
 
-        <p className={styles.para}>
-          <strong>List</strong>
-        </p>
-      </a>
+      <div className="filter-section">
+        <label htmlFor="priceFilter">Filter by Price:</label>
+        <select id="priceFilter" value={selectedPrice} onChange={handlePriceChange}>
+          <option value="">All Prices</option>
+          {serviceData && serviceData.map((price) => {
+            <option key={price.price} value={price.price}>{price.price}</option>
+})}
+        </select>
+      </div>
 
-      <a className={styles.option} href="#">
-        <div className={styles.icon}>
-          <IoGridOutline />
-        </div>
-
-        <p className={styles.para}>
-          <strong>Grid</strong>
-        </p>
-      </a>
-    </>
+      <button onClick={handleFilter}>Apply Filter</button>
+    </div>
   );
 };
+
 export default RightSide;

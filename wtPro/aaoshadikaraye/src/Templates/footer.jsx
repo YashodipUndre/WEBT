@@ -170,7 +170,7 @@ function Footer() {
               <span className="margin-r-20">
                 © 2024
               </span>
-              <img src={loggg} alt="logo" width="35" height="30" />
+              <img src={loggg} alt="lg" width="45" height="45" />
               <h4>AAOSHADIKARAYE</h4>
             </span>
             <span className="text-bold">

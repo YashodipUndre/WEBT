@@ -41,11 +41,56 @@ const Clothing = () => {
     }
   }
   const [serviceData, setServiceData] = useService();
+  function onFilterChange(items){
+    if(items.city=='' && items.price==''){
+      const Servicedata =  localStorage.getItem('ServiceData') 
+ if(Servicedata){
+  const parseData = JSON.parse(Servicedata);
+  setServiceData(parseData);
+ }
+    }
+    else{
+      if(items.city==='' && items.price!==''){
+        let Servicedata =  localStorage.getItem('ServiceData') 
+        Servicedata = JSON.parse(Servicedata);
+        console.log(items.city)
+        const data = Servicedata?.filter((item)=>{
+          return(
+           item.price===items.price
+          )
+        })
+        setServiceData(data)
+      }
+      else if(items.city!=='' && items.price===''){
+        let Servicedata =  localStorage.getItem('ServiceData') 
+        Servicedata = JSON.parse(Servicedata);
+        console.log(items.city)
+        const data = Servicedata?.filter((item)=>{
+          return(
+            item.location && item.location.toLowerCase().includes(items.city.toLowerCase())
+          )
+        })
+        setServiceData(data)
+      }
+      else{
+      let Servicedata =  localStorage.getItem('ServiceData') 
+      Servicedata = JSON.parse(Servicedata);
+      console.log(items.city)
+      const data = Servicedata?.filter((item)=>{
+        return(
+          item.location && item.location.toLowerCase().includes(items.city.toLowerCase()) && item.price===items.price
+        )
+      })
+      setServiceData(data)
+    }
+    }
+    
+}
   return (
     <>
        <div><Toaster></Toaster></div>
       <NavBar onClick={SideMenuLoader}></NavBar>
-      <RightSide></RightSide>
+      <RightSide onFilterChange={onFilterChange}></RightSide>
       <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
       <section className={styles.mainSection}>
       {serviceData ? serviceData.map((value) => (

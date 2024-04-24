@@ -9,6 +9,7 @@ import { useCart } from "../context/CartContext";
 import { Toaster, toast } from "react-hot-toast";
 import { useAuth } from "../context/UserContext";
 import axios from "axios";
+import RightSide from "./rightSideHeadingBar";
 const Template = () => {
   const[user,authUser] = useAuth();
   const [Cart,setCart] = useCart();
@@ -40,10 +41,56 @@ const Template = () => {
           setSMBDSIZE("0px");
       }
   }
+  function onFilterChange(items){
+    if(items.city=='' && items.price==''){
+      const Servicedata =  localStorage.getItem('ServiceData') 
+ if(Servicedata){
+  const parseData = JSON.parse(Servicedata);
+  setServiceData(parseData);
+ }
+    }
+    else{
+      if(items.city==='' && items.price!==''){
+        let Servicedata =  localStorage.getItem('ServiceData') 
+        Servicedata = JSON.parse(Servicedata);
+        console.log(items.city)
+        const data = Servicedata?.filter((item)=>{
+          return(
+           item.price===items.price
+          )
+        })
+        setServiceData(data)
+      }
+      else if(items.city!=='' && items.price===''){
+        let Servicedata =  localStorage.getItem('ServiceData') 
+        Servicedata = JSON.parse(Servicedata);
+        console.log(items.city)
+        const data = Servicedata?.filter((item)=>{
+          return(
+            item.location && item.location.toLowerCase().includes(items.city.toLowerCase())
+          )
+        })
+        setServiceData(data)
+      }
+      else{
+      let Servicedata =  localStorage.getItem('ServiceData') 
+      Servicedata = JSON.parse(Servicedata);
+      console.log(items.city)
+      const data = Servicedata?.filter((item)=>{
+        return(
+          item.location && item.location.toLowerCase().includes(items.city.toLowerCase()) && item.price===items.price
+        )
+      })
+      setServiceData(data)
+    }
+    }
+    
+}
   return (
     <>
        <div><Toaster></Toaster></div>
       <NavBar onClick={SideMenuLoader}></NavBar>
+      <RightSide onFilterChange={onFilterChange}></RightSide>
       <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
       <section className={styles.mainSection} >
        

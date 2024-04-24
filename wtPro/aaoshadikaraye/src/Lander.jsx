@@ -108,7 +108,7 @@ function NavBar({ onClick }) {
       <nav className="hor-navbar">
         <section className="left-side">
           <div className="logo-box">
-            <img className="logo" src={LogoRing} style={{ width: wid }} />
+            <img className="logo" src={LogoRing} />
             <h1>
               <span>A</span>ao<span>S</span>haadi<span>K</span>araye
             </h1>
