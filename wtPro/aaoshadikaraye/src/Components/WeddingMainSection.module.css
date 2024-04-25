@@ -233,4 +233,14 @@ button{
     color: palevioletred; /* Pink */
     background-color: gray; /* Gray */
   }
-  
+  @media (max-width: 1200px) {
+ .innerDiv{
+    width: 1000px;
+ }
+.component,.component1,.component2,.component3,.component4,.component5,.component7{
+    width: 150px;
+    
+}
+
+
+  }

@@ -139,3 +139,9 @@ body {
     font-family: "Nunito Sans", sans-serif;
     margin-right: 60px;
 }
+
+@media (max-width: 1000px) {
+    .h2tag{
+        display: none;
+    }
+    }

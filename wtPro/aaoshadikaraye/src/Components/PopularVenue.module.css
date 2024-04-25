@@ -87,3 +87,81 @@
 .next:hover,.prev:hover{
 	color: palevioletred;
 }
+
+@media (max-width: 1200px) {
+.popularVenueSection{
+	margin-top: 20px;
+}
+.container
+{
+	width: 1000px;
+}
+.cardContainer{
+	width: 1000px;
+}
+.prev ,.next
+{
+	margin-top: 30px;;
+}
+}
+
+@media (max-width: 992px) {
+  .popularVenueSection{
+		margin-top: 20px;
+		
+	}
+	.container
+	{
+		width: 880px;
+		margin-left: 20px;
+	}
+	.cardContainer{
+		width: 800px;
+	}
+	.prev ,.next
+	{
+		margin-top: 20px;;
+	}
+}
+
+@media (max-width: 768px) {
+  .popularVenueSection{
+		margin-top: 20px;
+		
+	}
+	.container
+	{
+		width: 680px;
+		margin-left: 20px;
+		
+	}
+	.cardContainer{
+		width: 600px;
+		margin-left: 20px;
+	}
+	.prev ,.next
+	{
+		margin-top: 30px;;
+	}
+}
+
+@media (max-width: 555px) {
+	.popularVenueSection{
+		margin-top: 20px;
+		
+	}
+	.container
+	{
+		width: 410px;
+		margin-left: 20px;
+		
+	}
+	.cardContainer{
+		width: 350px;
+		margin-left: 20px;
+	}
+	.prev ,.next
+	{
+		margin-top: 30px;;
+	}
+}

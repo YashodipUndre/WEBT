@@ -11,97 +11,76 @@ const WeddingCategoriesSection = () => {
   const handleClick = () => {
     setIsVisible(!state);
   };
-  async function photo(e){
-     localStorage.setItem("ServiceData",null);
-     history("/Photo");
-    
+  async function photo(e) {
+    localStorage.setItem("ServiceData", null);
+    history("/Photo");
+
     try {
-      const ans = await axios.get(
-        `http://localhost:8080/service/Photos`
-      );
+      const ans = await axios.get(`http://localhost:8080/service/Photos`);
       setServiceData(ans.data);
       localStorage.setItem("ServiceData", JSON.stringify(ans.data));
-      
     } catch (error) {
       console.log(error);
     }
-    
   }
-  async function Clothing(e){
-    localStorage.setItem("ServiceData",null);
+  async function Clothing(e) {
+    localStorage.setItem("ServiceData", null);
     history("/clothing");
-   
-   try {
-     const ans = await axios.get(
-       `http://localhost:8080/service/clothing`
-     );
-     setServiceData(ans.data);
-     localStorage.setItem("ServiceData", JSON.stringify(ans.data));
-     
-   } catch (error) {
-     console.log(error);
-   }
-   
- }
- async function makeup(e){
-  localStorage.setItem("ServiceData",null);
-  history("/makeup");
- 
- try {
-   const ans = await axios.get(
-     `http://localhost:8080/service/makeup`
-   );
-   setServiceData(ans.data);
-   localStorage.setItem("ServiceData", JSON.stringify(ans.data));
-   
- } catch (error) {
-   console.log(error);
- }
- 
-}
-async function decoration(e){
-  localStorage.setItem("ServiceData",null);
-  history("/deco");
- 
- try {
-   const ans = await axios.get(
-     `http://localhost:8080/service/deco`
-   );
-   setServiceData(ans.data);
-   localStorage.setItem("ServiceData", JSON.stringify(ans.data));
-   
- } catch (error) {
-   console.log(error);
- }
- 
-}
-async function food(e){
-  localStorage.setItem("ServiceData",null);
-  history("/food");
- 
- try {
-   const ans = await axios.get(
-     `http://localhost:8080/service/food`
-   );
-   setServiceData(ans.data);
-   localStorage.setItem("ServiceData", JSON.stringify(ans.data));
-   
- } catch (error) {
-   console.log(error);
- }
- 
-}
+
+    try {
+      const ans = await axios.get(`http://localhost:8080/service/clothing`);
+      setServiceData(ans.data);
+      localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async function makeup(e) {
+    localStorage.setItem("ServiceData", null);
+    history("/makeup");
+
+    try {
+      const ans = await axios.get(`http://localhost:8080/service/makeup`);
+      setServiceData(ans.data);
+      localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async function decoration(e) {
+    localStorage.setItem("ServiceData", null);
+    history("/deco");
+
+    try {
+      const ans = await axios.get(`http://localhost:8080/service/deco`);
+      setServiceData(ans.data);
+      localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async function food(e) {
+    localStorage.setItem("ServiceData", null);
+    history("/food");
+
+    try {
+      const ans = await axios.get(`http://localhost:8080/service/food`);
+      setServiceData(ans.data);
+      localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+    } catch (error) {
+      console.log(error);
+    }
+  }
   async function OpenVenues(e) {
-    localStorage.setItem("ServiceData",null);
+    localStorage.setItem("ServiceData", null);
     history("/Venues");
-    
+
     try {
       const ans = await axios.get(
         `http://localhost:8080/service/venues/${e.target.id}`
       );
       setServiceData(ans.data);
       localStorage.setItem("ServiceData", JSON.stringify(ans.data));
-      
     } catch (error) {
       console.log(error);
     }
@@ -125,13 +104,13 @@ async function food(e){
               FarmHouse
             </a>
             <a href="#" id="banquet hall" onClick={OpenVenues}>
-            BanquetHall
+              BanquetHall
             </a>
             <a href="#" id="lounge" onClick={OpenVenues}>
-            Lounge
+              Lounge
             </a>
             <a href="#" id="weddingresort" onClick={OpenVenues}>
-            WeddingResort
+              WeddingResort
             </a>
           </div>
         )}

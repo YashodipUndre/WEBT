@@ -224,30 +224,94 @@ body {
   }
   .slideshow{
     width: 1000px;
+    margin-left: 50px;  
+   height: 550px;
   }
   .imgFluid
   {
-    max-width: 90%;
+    max-width: 85%;
   }
   .slideWrapper{
-    width: calc(1200px * 4);
+    width: calc(1250px * 3);
   }
   
+  @keyframes slide {
+    20% { margin-left: 0px; }
+    50% { margin-left: calc(-1050px * 1); }
+    90% { margin-left: calc(-1050px * 2); }
+  }
 }
 
 @media (max-width: 992px) {
   .slide {
     height: auto; /* Removing fixed height for smaller screens */
-    width: calc(100% - 20px); /* Adjusting width for screens smaller than 992px */
+    width: 800px; /* Adjusting width for screens smaller than 992px */
   }
 
   .slideWrapper {
-    width: calc(100% * 4); /* Adjusting wrapper width for screens smaller than 992px */
+    width: calc(1000px * 3); /* Adjusting wrapper width for screens smaller than 992px */
+  }
+  .slideshow{
+    width: 800px;
+    margin-left: 100px;
+    height: 400px;
+  }
+  .imgFluid
+  {
+    max-width: 90%;
+  }
+  @keyframes slide {
+    20% { margin-left: 0px; }
+    50% { margin-left: calc(-850px * 1); }
+    90% { margin-left: calc(-850px * 2); }
   }
 }
 
 @media (max-width: 768px) {
+  
   .slide {
-    margin-left: 0; /* Removing left margin for screens smaller than 768px */
+     /* Removing fixed height for smaller screens */
+    width: 600px; /* Adjusting width for screens smaller than 992px */
   }
+
+  .slideWrapper {
+    width: calc(700px * 3); /* Adjusting wrapper width for screens smaller than 992px */
+  }
+  .slideshow{
+    width: 600px;
+    margin-left: 50px;
+    height: 300px;
+  }
+  .imgFluid
+  {
+    max-width: 80%;
+  }
+  @keyframes slide {
+    20% { margin-left: 0px; }
+    50% { margin-left: calc(-650px * 1); }
+    90% { margin-left: calc(-650px * 2); }
+  }
+
+}
+  @media (max-width: 555px) {
+    .slide {
+      /* Removing fixed height for smaller screens */
+     width: 480px; /* Adjusting width for screens smaller than 992px */
+   }
+    
+  
+   
+    .slideshow{
+      height: 250px;
+      margin-left:0px;
+    }
+    .imgFluid
+    {
+      max-width: 80%;
+    }
+    @keyframes slide {
+      20% { margin-left: 0px; }
+      50% { margin-left: calc(-520px * 1); }
+      90% { margin-left: calc(-520px * 2); }
+    }
 }

@@ -155,3 +155,32 @@ h3,h4,h5,strong,p{
   border-top-left-radius:0px;
   border-top-right-radius: 0px;
 }
+
+@media (max-width: 1200px) {
+  .mainSection{
+    grid-template-columns: 370px 370px 370px;
+   
+  }
+  }
+  
+  @media (max-width: 992px) {
+    .mainSection{
+      grid-template-columns: 420px 420px;
+      
+    }
+    .card{
+      width: 27em;
+      height: 30em;
+    }
+  }
+  
+  @media (max-width: 555px) {
+    .mainSection{
+      grid-template-columns: 420px;
+    
+    }
+    .card{
+      width: 27em;
+      height: 27em;
+    }
+  }
