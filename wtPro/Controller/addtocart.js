@@ -19,31 +19,18 @@ exports.getItems=async(req,res)=>{
     let arr;
         try{
             let photo;
-            const data = await cartModel.find({username:req.body.username}).select('product_code');
-            const megaData = data?.map((item)=>{
+            const data = await cartModel.find({username:req.body.username}).select('product_code')
+            const megaData = data?.filter(item=>{
                 return(
-                    item._id
+                  item.product_code
                 )
             })
-            const venue= await venueModel.aggregate([
-                {
-                  $match: {
-                    $or:[megaData]
-                  }
-                },
-                {
-                  "$project": {
-                    _id: 1,
-                    title: 1
-                  }
-                }
-            ]
-              )
-            res.json(venue);
-        }
-         catch(error){
-          console.log(error)
-         }
+            res.json(megaData);
+          }
+          catch{
+
+          }
+            
    
   
 }

@@ -10,9 +10,15 @@ import { Toaster, toast } from "react-hot-toast";
 import { useAuth } from "../context/UserContext";
 import axios from "axios";
 import RightSide from "./rightSideHeadingBar";
+import { useMain } from "../context/MainTemplateContext";
+import { useNavigate } from "react-router-dom";
+import { useWedding } from "../context/weddingContext";
 const Template = () => {
   const[user,authUser] = useAuth();
   const [Cart,setCart] = useCart();
+  const [bigTemp, setMain] = useState('');
+  const[weduser,setWedUser] = useWedding();
+  const history = useNavigate();
   async function TemplateInfo(item){
    
     if(user){
@@ -95,7 +101,7 @@ const Template = () => {
       <section className={styles.mainSection} >
        
         {serviceData ? serviceData.map((value) => (
-          <a className={styles.card} href="#" onClick={(e)=>{e.stopPropagation();TemplateInfo(value)}}>
+          <a className={styles.card} href="#" >
             <LowerSection
               key={value._id}
               venue={value.venue}
@@ -106,6 +112,8 @@ const Template = () => {
               img = {value.image}
               venuetype={value.venueType}
             />
+            {user && weduser ?<button id={styles.AddToCart} onClick={(e)=>{e.stopPropagation();TemplateInfo(value)}}>AddToCart</button>:<></>}
+            
           </a>
         )): <SimpleBackdrop></SimpleBackdrop>}
       </section>

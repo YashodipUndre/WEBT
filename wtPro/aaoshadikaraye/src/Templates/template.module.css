@@ -124,7 +124,7 @@
   text-overflow: ellipsis;
 }
 .thirdLine{
-  display: flex;
+  display:grid;
   flex-direction: row;
   height: 90px;
   gap: 90px;
@@ -147,4 +147,11 @@
 }
 h3,h4,h5,strong,p{
   text-decoration: none;
+}
+
+#AddToCart{
+  color: black;
+  width: 100%;
+  border-top-left-radius:0px;
+  border-top-right-radius: 0px;
 }

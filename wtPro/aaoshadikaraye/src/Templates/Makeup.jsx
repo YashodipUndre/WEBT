@@ -12,9 +12,11 @@ import { useAuth } from "../context/UserContext";
 import LowerSectionFood from "./lowerSectionFood";
 import RightSide from "./rightSideHeadingBar";
 import LowerSectionMakeup from "./loweSectionMakeup";
+import { useWedding } from "../context/weddingContext";
 const Makeups = () => {
   const [user, authUser] = useAuth();
   const [Cart,setCart] = useCart();
+  const[weduser,setWedUser] = useWedding();
   async function TemplateInfo(item){
     if(user){
      setCart([...Cart,item]);
@@ -95,7 +97,7 @@ const Makeups = () => {
       <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
       <section className={styles.mainSection}>
       {serviceData ? serviceData.map((value) => (
-          <a className={styles.card} href="#" onClick={(e)=>{e.stopPropagation();TemplateInfo(value)}}>
+          <a className={styles.card} href="#" >
             <LowerSectionMakeup
               key={value.id}
               venue={value.venue}
@@ -105,6 +107,7 @@ const Makeups = () => {
               price={value.price}
               img={value.image}
             />
+                         {user && weduser ?<button id={styles.AddtoCart} onClick={(e)=>{e.stopPropagation();TemplateInfo(value)}}>AddToCart</button>:<></>}
           </a>
         )): <SimpleBackdrop></SimpleBackdrop>}
       </section>

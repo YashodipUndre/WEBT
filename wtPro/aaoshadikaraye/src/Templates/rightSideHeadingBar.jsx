@@ -41,9 +41,9 @@ const RightSide = ({ onFilterChange }) => {
         <label htmlFor="priceFilter">Filter by Price:</label>
         <select id="priceFilter" value={selectedPrice} onChange={handlePriceChange}>
           <option value="">All Prices</option>
-          {serviceData && serviceData.map((price) => {
+          {serviceData && serviceData.map((price) => (
             <option key={price.price} value={price.price}>{price.price}</option>
-})}
+))}
         </select>
       </div>
 

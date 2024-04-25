@@ -144,3 +144,9 @@ background-color: aqua;
 h3,h4,h5,strong{
   text-decoration: none;
 }
+#AddToCart{
+  color: black;
+  width: 100%;
+  border-top-left-radius:0px;
+  border-top-right-radius: 0px;
+}

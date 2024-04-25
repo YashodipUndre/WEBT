@@ -11,9 +11,11 @@ import axios from "axios";
 import { useAuth } from "../context/UserContext";
 import LowerSectionDeco from "./lowerSectionDecoration";
 import RightSide from "./rightSideHeadingBar";
+import { useWedding } from "../context/weddingContext";
 const Deco = () => {
   const [user, authUser] = useAuth();
   const [Cart,setCart] = useCart();
+  const[weduser,setWedUser] = useWedding();
   async function TemplateInfo(item){
     if(user){
      setCart([...Cart,item]);
@@ -94,7 +96,7 @@ const Deco = () => {
       <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
       <section className={styles.mainSection}>
       {serviceData ? serviceData.map((value) => (
-          <a className={styles.card} href="#" onClick={(e)=>{e.stopPropagation();TemplateInfo(value)}}>
+          <a className={styles.card} href="#" >
             <LowerSectionDeco
               key={value.id}
               venue={value.venue}
@@ -103,6 +105,7 @@ const Deco = () => {
               price={value.price}
               img={value.image}
             />
+                       {user && weduser ?<button id={styles.AddtoCart} onClick={(e)=>{e.stopPropagation();TemplateInfo(value)}}>AddToCart</button>:<></>}
           </a>
         )): <SimpleBackdrop></SimpleBackdrop>}
       </section>

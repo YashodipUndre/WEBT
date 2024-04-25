@@ -8,7 +8,7 @@ import {
   Switch,
 } from "react-router-dom";
 import SignUp from "./SignUp";
-import Maintemplate from "./Components/MainTemplate";
+
 import Login from "./login";
 import UserContext, { useAuth } from "./context/UserContext";
 import MainPage from "./MainPage";
@@ -137,14 +137,6 @@ function App() {
           element={
             <>
               <WeddingReg></WeddingReg>
-            </>
-          }
-        />
-        <Route
-          path="/MainTemplate"
-          element={
-            <>
-              <Maintemplate></Maintemplate>
             </>
           }
         />
