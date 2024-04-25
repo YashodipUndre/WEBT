@@ -1,6 +1,6 @@
 
 .card{
-  width: 22rem;
+  width: 25rem;
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -8,10 +8,12 @@
   height: 27em;
   transition: all 0.3s ease-in-out;
   border-radius: 20px;
+
 }
 .card:hover{
   background-color: white;
   color: palevioletred;
+  text-decoration: none;
 }
 .mainSection{
   display: grid;
@@ -22,9 +24,32 @@
 
 
 .cardImage{
-  height: 65%;
+  height: 50%;
   object-fit: cover; 
   border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.secondLineDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.secondLineDivSection2
+{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+.priceT,.priceP{
+  margin: 0;
+}
+.priceT{
+  font-size: 1.3em;
+}
+.priceP{
+  margin-left: 10px;
+  font-size: 1.3em;
 }
 
 .rating, .ratingOG{
@@ -49,14 +74,14 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px 5px rgba(0, 0, 0, 0.1);
   color:black;
+  transition: 0.3s ease-in-out all;
 }
-.lowerDiv:hover{
-  transform: scale(1.1);
-  transition: 1s;
+.lowerDiv:hover {
+  box-shadow: 1px 1px 1px #ccc;
 }
 .firstLine{
   display: grid;
-  grid-template-columns: 80px 80px;
+  grid-template-columns: 140px 100px;
   height: 40px;
 }
 
