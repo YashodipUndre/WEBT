@@ -18,6 +18,7 @@ const AuthProvider = ({ children }) => {
     authUser(parseData);
     
    }
+   
    //eslint-disable-next-line
     },[])
   return (

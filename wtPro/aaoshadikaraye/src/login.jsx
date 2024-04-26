@@ -6,9 +6,13 @@ import axios from "axios";
 import { useAuth } from "./context/UserContext";
 import { useNavigate } from "react-router-dom";
 import { useWedding } from "./context/weddingContext";
+import { useService } from "./context/ServiceDataContext";
+import { useEffect } from "react";
 function Login() {
+ 
   const [weduser,setWedUser] = useWedding();
   const [SMBDSIZE, setSMBDSIZE] = useState("0px");
+  const [Cart, setCart] = useService();
   function SideMenuLoader() {
     if (SMBDSIZE === "0px") {
       setSMBDSIZE("200px");
@@ -31,20 +35,43 @@ function Login() {
   const [constent, setContest] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add form submission logic here, e.g., sending data to server
+    // axios.post("http://localhost:8080/login", formData)
+    // .then(ans => {
+    //     if (ans.data._id) {
+    //         authUser(ans.data);
+    //         localStorage.setItem("auth", JSON.stringify(ans.data));
+    //         history("/MainPage");
+    //     } else {
+    //         setContest("incorrect password!");
+    //     }
+
+      
+    // })
+    // .catch(error => {
+    //     // Handle error for first call
+    //     setContest("Check username and password");
+    // });
     try {
       const ans = await axios.post("http://localhost:8080/login", formData);
+     
       if (ans.data._id) {
-
-        authUser(ans.data);
-        localStorage.setItem("auth", JSON.stringify(ans.data));
-        history("/MainPage");
+          authUser(ans.data);
+          localStorage.setItem("auth", JSON.stringify(ans.data));
+          
+  
+          // Fetch cart data after successful login
+          const ansData = await axios.post("http://localhost:8080/AddToCart/getItem", { username: ans.data.username });
+          localStorage.setItem("cartData", JSON.stringify(ansData.data));
+          setCart(ansData.data); // Assuming the cart data is stored in the 'data' field of the response
+          history("/MainPage");
       } else {
-        setContest("incorrect password!");
+          setContest("incorrect password!");
       }
-    } catch (error) {
+  } catch (error) {
       setContest("Check username and password");
-    }
+  }
+  
+
   };
 
   return (

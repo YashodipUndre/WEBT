@@ -42,7 +42,7 @@ const RightSide = ({ onFilterChange }) => {
         <select id="priceFilter" value={selectedPrice} onChange={handlePriceChange}>
           <option value="">All Prices</option>
           {serviceData && serviceData.map((price) => (
-            <option key={price.price} value={price.price}>{price.price}</option>
+            <option key={price.price?price.price:price.price_per_plate} value={price.price?price.price:price.price_per_plate}>{price.price?price.price:price.price_per_plate}</option>
 ))}
         </select>
       </div>

@@ -18,6 +18,7 @@ import cartImg from './Images/icons8-cart-50.png'
 import { useCart } from "./context/CartContext";
 import { LoaderIcon } from "react-hot-toast";
 import { useWedding } from "./context/weddingContext";
+import YourComponent from "./Components/Badge";
 
 function NavBar({ onClick }) {
   const [user, authUser] = useAuth('');
@@ -84,15 +85,40 @@ function NavBar({ onClick }) {
     authUser(null);
     setWedUser(null);
     localStorage.setItem("auth", null);
-    localStorage.setItem('wed', null);
+    //localStorage.setItem('wed', null);
     history('/MainPage');
     setCart([]);
     localStorage.setItem("cartData", null);
 
   }
+  function Searchsmall(item){
+    if(item.type=='venue'){
+      
+      history('/Venues')
+    }
+    else if(item.type=='Photographers'){
+      
+      history('/Photo')
+    }
+    else if(item.type=='Makeup'){
+      
+      history('/makeup')
+    }
+    else if(item.type=='Clothing'){
+ 
+      history('/clothing')
+    }
+    else if(item.type=='Food'){
+    
+      history('/food')
+    }
+    else if(item.type=='Decoration'){
+      history('/deco')
+    }
+   
+  }
 
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -168,10 +194,9 @@ function NavBar({ onClick }) {
               <button id="MenuBarRes" onClick={Opening}>
                 <img src={MenuLogo} alt="" id="MenuBarResImg" />
               </button>
-              <Link to="/cart"> <Badge count={Cart ? Cart.length : 0} offset={[10, 10]}>
-                <img src={cartImg} id="cart"></img>
-              </Badge></Link>
-
+              <Link to="/cart"> 
+              <YourComponent></YourComponent>
+              </Link>
             </>
           )}
         </section>
@@ -194,11 +219,11 @@ function NavBar({ onClick }) {
               </div>
               <div className="FrResult">
                 <div className="results-list">
-                  {SearchData && SearchData.map((data) => {
+                  {SearchData && SearchData?.map((data) => {
                     return (
                       <div
                         className="search-result"
-                      >
+                      onClick={(e)=>Searchsmall(data)} style={{cursor: 'pointer'} }>
                         <img src={data.image}></img>
                         {data.venue}
                       </div>

@@ -9,6 +9,7 @@ import { Toaster, toast } from "react-hot-toast";
 import { useCart } from "../context/CartContext";
 import OurPackages from "./OurPackages";
 import WeddingCategoriesSection from "./WeddingCategoriesSection";
+import axios from "axios";
 const Product = ({ pr, image, price, onRemove,rating,venue }) => {
   return (
     <div className="item">
@@ -40,12 +41,12 @@ const Product = ({ pr, image, price, onRemove,rating,venue }) => {
 const ShoppingCart = () => {
   const[Cart,setCart] = useCart();
   const[tt,sett]  =useState(0);
-  
+  let total = 0;
   let finalTotal=()=>{
     try {
-      let total = 0;
+      
       Cart?.map(pr=>{
-         total=total +pr.price;
+         total=total + parseInt(pr.price?pr.price:pr.price_per_plate);
       })
       return total;
     } catch (error) {
@@ -53,12 +54,26 @@ const ShoppingCart = () => {
     }
    
   }
-  const handleRemove = (id) => {
+  function PaymentGateWay(){
+    if(total!==0){
+      toast('Your Order Has Been Placed Succesfully', {
+        icon: '👏',
+      });
+    }
+    else{
+      toast.error('Add Some Items In The Cart First')
+    }
+     
+
+  }
+  const handleRemove = async(id) => {
     const upDated = Cart.filter((p)=>p._id!==id);
     setCart(upDated);
     toast.success(`Removed Succesfully`);
     const item=JSON.parse(localStorage.getItem('cartData'))
     localStorage.setItem('cartData',JSON.stringify(item.filter((p)=>p._id!=id)))
+    console.log(id);
+    await axios.delete(`http://localhost:8080/AddToCart/deleteItem/${id}`)
   };
 
   return (
@@ -67,13 +82,13 @@ const ShoppingCart = () => {
     <div className="Main-Cart">
     {Cart ?
     <div className="shopping-cart">
-      { Cart.map((product) => (
+      { Cart && Cart?.map((product) => (
         <Product
           key={product._id}
           pr={product.type}
           image={product.image}
           rating={product.rating}
-          price={product.price}
+          price={product.price?product.price:product.price_per_plate}
           venue={product.venue}
           // onSaveForLater={() => handleSaveForLater(product)}
           onRemove={() => handleRemove(product._id)}
@@ -82,7 +97,7 @@ const ShoppingCart = () => {
       <div className="sub-total">
         Sub-Total: {finalTotal()}
       </div>
-      <button className="checkout">Checkout</button>
+      <button className="checkout" onClick={PaymentGateWay}>Checkout</button >
     </div>
     :<h5>Noting here</h5>}
     </div>

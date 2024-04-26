@@ -2,6 +2,7 @@ const model = require('../Model/AddToCartModel')
 const cartModel = model.Model
 const md = require('../Model/service')
 const venueModel = md.Model;
+const { MongoClient, ObjectId } = require('mongodb');
 exports.addItems = async(req,res)=>{
     try{
         const data = new cartModel(req.body);
@@ -16,16 +17,15 @@ exports.addItems = async(req,res)=>{
 }
 
 exports.getItems=async(req,res)=>{
-    let arr;
         try{
-            let photo;
             const data = await cartModel.find({username:req.body.username}).select('product_code')
-            const megaData = data?.filter(item=>{
+            const megaData = data?.map(item=>{
                 return(
                   item.product_code
                 )
             })
-            res.json(megaData);
+          const ans = await venueModel.find({ _id: { $in: megaData } });
+          res.json(ans);
           }
           catch{
 
@@ -33,4 +33,13 @@ exports.getItems=async(req,res)=>{
             
    
   
+}
+exports.deleteItem=async(req,res)=>{
+  try{
+    const newData=await cartModel.deleteOne({product_code:new ObjectId(req.params.id)});
+    console.log(newData)
+}
+catch(error){
+ console.log(error);
+}
 }
