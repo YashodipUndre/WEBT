@@ -5,8 +5,8 @@ const server = express();
 const cors = require('cors');
 require('dotenv').config()
 const mongoose = require('mongoose');
-const username = encodeURIComponent("yashundre07");
-const password = encodeURIComponent("Yashodip@123");
+const username = encodeURIComponent(process.env.USER_NAME);
+const password = encodeURIComponent(process.env.DB_PASSWORD);
 const db = `mongodb+srv://${username}:${password}@cluster0.uucxr3d.mongodb.net/?appName=mongosh+2.1.4/`
 const ldb = 'mongodb://localhost:27017/ecommarce'
 const session = require('express-session')

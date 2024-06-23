@@ -22,6 +22,7 @@ import Clothing from "./Templates/Clothing";
 import Deco from "./Templates/Decoration";
 import Food from "./Templates/Food";
 import WeddingReg from "./WeddingReg";
+import ContactForm from "./Components/Contactus";
 function App() {
   const [auth, userAuth] = useAuth();
   const [SMBDSIZE, setSMBDSIZE] = useState("0px");
@@ -137,6 +138,14 @@ function App() {
           element={
             <>
               <WeddingReg></WeddingReg>
+            </>
+          }
+        />
+        <Route
+          path="/ContactForm"
+          element={
+            <>
+              <ContactForm></ContactForm>
             </>
           }
         />

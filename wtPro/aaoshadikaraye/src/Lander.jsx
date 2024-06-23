@@ -21,11 +21,16 @@ import { useWedding } from "./context/weddingContext";
 import YourComponent from "./Components/Badge";
 
 function NavBar({ onClick }) {
+  const [RecentData,SetRecentData] = useState('');
   const [user, authUser] = useAuth('');
   const [Cart, setCart] = useCart();
   const [weduser, setWedUser] = useWedding();
   const [SearchData, setSearchData] = useState();
   const history = useNavigate();
+  const [loop ,Setloop] = useState('');
+  function Recentdata(){
+    console.log("hi");
+  }
   function wedding() {
     try {
       axios.post("http://localhost:8080/Wedding/Check", {email:user.email})
@@ -92,6 +97,18 @@ function NavBar({ onClick }) {
 
   }
   function Searchsmall(item){
+    console.log(item);
+     SetRecentData([...RecentData,item]);
+     console.log(RecentData)
+     if(RecentData){
+       setInterval(() => {
+        RecentData.map((data)=>{
+          Setloop(data);
+          
+        })
+      }, 5000);
+      
+     }
     if(item.type=='venue'){
       
       history('/Venues')
@@ -213,8 +230,9 @@ function NavBar({ onClick }) {
                 <input
                   type="text"
                   className="search-bar"
-                  placeholder="Search for vendors, ideas, real wedding stories and more!"
+                  placeholder={RecentData?`You Searched For "${loop.venue}"`:`Search for vendors, ideas, real wedding stories and more!`}
                   onChange={TextChanged}
+                  onClick={Recentdata}
                 />
               </div>
               <div className="FrResult">
@@ -265,7 +283,7 @@ function MainDiv() {
     <div className="MainD" style={{ backgroundImage: `url(${backgroundImg})` }}>
       <div className="Text">
         <h1>Shadi Karni He</h1>
-        <h2>Ajao Kara Denge</h2>
+        <h2 style={{marginTop:'3px'}}>Ajao Kara Denge</h2>
       </div>
       <button>
         <Link
