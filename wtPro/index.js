@@ -88,10 +88,10 @@ function isauth(req, res, done) {
 }
 //server.use(express.static('public'));
 //Static for react files
-server.use(express.static('build'));       
-server.use("/*", function(req, res) {
-  res.sendFile(path.join(__dirname,'build', "index.html"));
-});
+// server.use(express.static('build'));       
+// server.use("/*", function(req, res) {
+//   res.sendFile(path.join(__dirname,'build', "index.html"));
+// });
 server.use('/service',service.router)
 server.use('/Search',serachRouter.router);
 server.use('/AddToCart',AddToCartRouter.router);
