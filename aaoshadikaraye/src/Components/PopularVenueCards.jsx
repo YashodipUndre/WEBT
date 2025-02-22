@@ -17,7 +17,7 @@ const PopularVenueCards = ({ data }) => {
 
     try {
       const response = await axios.get(
-        `http://localhost:8080/service/venues/${id}`,
+        `https://aaoshadikaraye.onrender.com/service/venues/${id}`,
         {
           withCredentials: true, // Include cookies
         }

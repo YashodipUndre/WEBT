@@ -76,7 +76,7 @@ const WeddingCategoriesSection = () => {
         console.log("Clicked ID:", e.target.id);
 
         const ans = await axios.get(
-            `http://localhost:8080/service/venues/${e.target.id}`,
+            `https://aaoshadikaraye.onrender.com/service/venues/${e.target.id}`,
             { withCredentials: true }
         );
 

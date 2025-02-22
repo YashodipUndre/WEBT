@@ -52,13 +52,13 @@ function Login() {
     //     setContest("Check username and password");
     // });
     try {
-      const ans = await axios.post("http://localhost:8080/login", formData);
+      const ans = await axios.post("https://aaoshadikaraye.onrender.com/login", formData);
       if (ans.data._id) {
         console.log(ans.data);
         authUser(ans.data);
         localStorage.setItem("auth", JSON.stringify(ans.data));
         const timeout = setTimeout(async () => { // Use `setTimeout` instead of `setInterval`
-            await axios.post("http://localhost:8080/logout");
+            await axios.post("https://aaoshadikaraye.onrender.com/logout");
             console.log("Done");
             authUser(null);
             setWedUser(null);
@@ -69,7 +69,7 @@ function Login() {
         }, 3600000);
         //clearInterval(timeout);
         // Fetch cart data after successful login
-        const ansData = await axios.post("http://localhost:8080/AddToCart/getItem", { username: ans.data.username });
+        const ansData = await axios.post("https://aaoshadikaraye.onrender.com/AddToCart/getItem", { username: ans.data.username });
         localStorage.setItem("cartData", JSON.stringify(ansData.data));
         setCart(ansData.data); // Assuming the cart data is stored in the 'data' field of the response
         history("/MainPage");

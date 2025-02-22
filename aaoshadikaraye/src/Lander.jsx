@@ -33,7 +33,7 @@ function NavBar({ onClick }) {
   }
   function wedding() {
     try {
-      axios.post("http://localhost:8080/Wedding/Check", { email: user.email })
+      axios.post("https://aaoshadikaraye.onrender.com/Wedding/Check", { email: user.email })
         .then(response => {
           // Handle success
           console.log(response.data);
@@ -54,7 +54,7 @@ function NavBar({ onClick }) {
   }
   async function TextChanged(e) {
     try {
-      const ans = await axios.get('http://localhost:8080/Search/All');
+      const ans = await axios.get('https://aaoshadikaraye.onrender.com/Search/All');
       const FinalData = ans.data.filter((a) => {
         return (
           e.target.value && a && a.venue.toLowerCase().includes(e.target.value))
@@ -85,7 +85,7 @@ function NavBar({ onClick }) {
   const [wid, setWid] = useState("50px");
 
   async function Logout() {
-    const ans = await axios.post("http://localhost:8080/logout");
+    const ans = await axios.post("https://aaoshadikaraye.onrender.com/logout");
     authUser(null);
     setWedUser(null);
     localStorage.setItem("auth", null);

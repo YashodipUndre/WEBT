@@ -32,7 +32,7 @@ function SignUp(){
     e.preventDefault();
     // Add form submission logic here, e.g., sending data to server
     try{
-     const ans = await axios.post('http://localhost:8080/registration',formData);
+     const ans = await axios.post('https://aaoshadikaraye.onrender.com/registration',formData);
      if(ans.data._id){
       setContest('Registratioin Sussecfully')
      }

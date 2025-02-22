@@ -28,7 +28,7 @@ const Makeups = () => {
       'type':item.type
      }
      try {
-        await axios.post('http://localhost:8080/AddToCart/item',data);
+        await axios.post('https://aaoshadikaraye.onrender.com/AddToCart/item',data);
 
      } catch (error) {
       console.log(error)

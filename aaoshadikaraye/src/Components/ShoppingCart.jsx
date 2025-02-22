@@ -73,7 +73,7 @@ const ShoppingCart = () => {
     const item=JSON.parse(localStorage.getItem('cartData'))
     localStorage.setItem('cartData',JSON.stringify(item.filter((p)=>p._id!=id)))
     console.log(id);
-    await axios.delete(`http://localhost:8080/AddToCart/deleteItem/${id}`)
+    await axios.delete(`https://aaoshadikaraye.onrender.com/AddToCart/deleteItem/${id}`)
   };
 
   return (

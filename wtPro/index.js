@@ -5,7 +5,7 @@ const server = express();
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 server.use(cors({
-    origin: 'http://localhost:3000', // React app's URL
+    origin: '*', // React app's URL
     credentials: true, // Allow cookies to be sent
 }));
 require('dotenv').config()

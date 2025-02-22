@@ -51,7 +51,7 @@ function WeddingReg() {
     async function handleSubmit(values) {
         
         try{
-            const ans = await axios.post('http://localhost:8080/Wedding/Reg',formData);
+            const ans = await axios.post('https://aaoshadikaraye.onrender.com/Wedding/Reg',formData);
             if(ans.data._id){
              setWedUser(ans.data);
              localStorage.setItem('wed',JSON.stringify(ans.data));

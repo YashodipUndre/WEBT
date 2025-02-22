@@ -12,7 +12,7 @@ function UserProfile() {
     const [user, authUser] = useAuth();
     const history = useNavigate();
     async function Logout() {
-        const ans = await axios.post('http://localhost:8080/logout');
+        const ans = await axios.post('https://aaoshadikaraye.onrender.com/logout');
         authUser(null);
         localStorage.setItem('auth', null);
         history('/login');
