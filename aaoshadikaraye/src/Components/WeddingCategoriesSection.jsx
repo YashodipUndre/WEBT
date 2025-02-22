@@ -72,19 +72,25 @@ const WeddingCategoriesSection = () => {
     }
   }
   async function OpenVenues(e) {
-    localStorage.setItem("ServiceData", null);
-    history("/Venues");
-
     try {
-      const ans = await axios.get(
-        `http://localhost:8080/service/venues/${e.target.id}`
-      );
-      setServiceData(ans.data);
-      localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+        console.log("Clicked ID:", e.target.id);
+
+        const ans = await axios.get(
+            `http://localhost:8080/service/venues/${e.target.id}`,
+            { withCredentials: true }
+        );
+
+        console.log("API Response:", ans.data);
+
+        setServiceData(ans.data);
+        localStorage.setItem("ServiceData", JSON.stringify(ans.data));
+
+        // Navigate only after data is set
+        history("/Venues");
     } catch (error) {
-      console.log(error);
+        console.error("Error fetching venues:", error);
     }
-  }
+}
   return (
     <section className={styles.outerDiv}>
       <h2 className={styles.h2tag}>Everything You Need!!</h2>

@@ -9,8 +9,8 @@ import { useWedding } from "./context/weddingContext";
 import { useService } from "./context/ServiceDataContext";
 import { useEffect } from "react";
 function Login() {
- 
-  const [weduser,setWedUser] = useWedding();
+  
+  const [weduser, setWedUser] = useWedding();
   const [SMBDSIZE, setSMBDSIZE] = useState("0px");
   const [Cart, setCart] = useService();
   function SideMenuLoader() {
@@ -26,7 +26,7 @@ function Login() {
     username: "",
     password: "",
   });
-
+ 
   const handleChange = (e) => {
     const { name, value, type } = e.target;
     const newValue = value;
@@ -45,7 +45,7 @@ function Login() {
     //         setContest("incorrect password!");
     //     }
 
-      
+
     // })
     // .catch(error => {
     //     // Handle error for first call
@@ -53,24 +53,33 @@ function Login() {
     // });
     try {
       const ans = await axios.post("http://localhost:8080/login", formData);
-     
       if (ans.data._id) {
-          authUser(ans.data);
-          localStorage.setItem("auth", JSON.stringify(ans.data));
-          
-  
-          // Fetch cart data after successful login
-          const ansData = await axios.post("http://localhost:8080/AddToCart/getItem", { username: ans.data.username });
-          localStorage.setItem("cartData", JSON.stringify(ansData.data));
-          setCart(ansData.data); // Assuming the cart data is stored in the 'data' field of the response
-          history("/MainPage");
+        console.log(ans.data);
+        authUser(ans.data);
+        localStorage.setItem("auth", JSON.stringify(ans.data));
+        const timeout = setTimeout(async () => { // Use `setTimeout` instead of `setInterval`
+            await axios.post("http://localhost:8080/logout");
+            console.log("Done");
+            authUser(null);
+            setWedUser(null);
+            localStorage.removeItem("auth"); // Remove instead of setting null
+            history("/MainPage");
+            setCart([]);
+            localStorage.removeItem("cartData"); // Remove instead of setting null
+        }, 3600000);
+        //clearInterval(timeout);
+        // Fetch cart data after successful login
+        const ansData = await axios.post("http://localhost:8080/AddToCart/getItem", { username: ans.data.username });
+        localStorage.setItem("cartData", JSON.stringify(ansData.data));
+        setCart(ansData.data); // Assuming the cart data is stored in the 'data' field of the response
+        history("/MainPage");
       } else {
-          setContest("incorrect password!");
+        setContest("incorrect password!");
       }
-  } catch (error) {
+    } catch (error) {
       setContest("Check username and password");
-  }
-  
+    }
+
 
   };
 

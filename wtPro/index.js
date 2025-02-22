@@ -2,7 +2,12 @@
 const express = require('express');
 const mongodb = require('mongodb');
 const server = express();
+const cookieParser = require('cookie-parser');
 const cors = require('cors');
+server.use(cors({
+    origin: 'http://localhost:3000', // React app's URL
+    credentials: true, // Allow cookies to be sent
+}));
 require('dotenv').config()
 const mongoose = require('mongoose');
 const username = encodeURIComponent(process.env.USER_NAME);
@@ -16,8 +21,9 @@ const path = require('path')
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./Model/User');
 const UserModel = User.Model;
-server.use(cors());
+// server.use(cors());
 server.use(bdp.json());
+server.use(cookieParser());
 server.use(bdp.urlencoded())
 const AddToCartRouter = require('./Routers/addc');
 const service = require('./Routers/service')
@@ -35,8 +41,8 @@ async function main() {
 server.use(session({
     secret: 'keyboard cat',
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false, maxAge: 60000 }
+    saveUninitialized: false,
+    cookie: { secure: false,maxAge:3600000}
 }))
 server.use(passport.initialize())
 server.use(passport.session())
@@ -79,20 +85,21 @@ passport.deserializeUser((id, done) => {
             return done(null, false);
         })
 })
-function isauth(req, res, done) {
-    if (req.user) {
+function isauth(req, res, next) {
+    console.log('Cookies:', req.cookies);
+    if (req.isAuthenticated()) {
         console.log(req.user);
-        return done();
+        return next();
     }
     return res.json({loggedin:false});
 }
-//server.use(express.static('public'));
+server.use(express.static('public'));
 //Static for react files
 // server.use(express.static('build'));       
 // server.use("/*", function(req, res) {
 //   res.sendFile(path.join(__dirname,'build', "index.html"));
 // });
-server.use('/service',service.router)
+server.use('/service',service.router);
 server.use('/Search',serachRouter.router);
 server.use('/AddToCart',AddToCartRouter.router);
 server.use('/Wedding',WeddingRouter.router);
@@ -102,16 +109,18 @@ server.post('/logout', (req, res) => {
         if (err) {
             res.send(err)
         }
+        else{
+            res.json(req.body);
+        }
 
     });
-    res.json(req.body);
     console.log(req.body)
 })
 server.post('/login',
     passport.authenticate('local'),
     function (req, res) {
         res.json(req.user);
-       
+        console.log(req.user);
     });
 
 

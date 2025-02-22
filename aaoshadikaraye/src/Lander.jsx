@@ -21,19 +21,19 @@ import { useWedding } from "./context/weddingContext";
 import YourComponent from "./Components/Badge";
 
 function NavBar({ onClick }) {
-  const [RecentData,SetRecentData] = useState('');
+  const [RecentData, SetRecentData] = useState('');
   const [user, authUser] = useAuth('');
   const [Cart, setCart] = useCart();
   const [weduser, setWedUser] = useWedding();
   const [SearchData, setSearchData] = useState();
   const history = useNavigate();
-  const [loop ,Setloop] = useState('');
-  function Recentdata(){
+  const [loop, Setloop] = useState('');
+  function Recentdata() {
     console.log("hi");
   }
   function wedding() {
     try {
-      axios.post("http://localhost:8080/Wedding/Check", {email:user.email})
+      axios.post("http://localhost:8080/Wedding/Check", { email: user.email })
         .then(response => {
           // Handle success
           console.log(response.data);
@@ -84,7 +84,6 @@ function NavBar({ onClick }) {
   }
   const [wid, setWid] = useState("50px");
 
-
   async function Logout() {
     const ans = await axios.post("http://localhost:8080/logout");
     authUser(null);
@@ -96,43 +95,43 @@ function NavBar({ onClick }) {
     localStorage.setItem("cartData", null);
 
   }
-  function Searchsmall(item){
+  function Searchsmall(item) {
     console.log(item);
-     SetRecentData([...RecentData,item]);
-     console.log(RecentData)
-     if(RecentData){
-       setInterval(() => {
-        RecentData.map((data)=>{
+    SetRecentData([...RecentData, item]);
+    console.log(RecentData)
+    if (RecentData) {
+      setInterval(() => {
+        RecentData.map((data) => {
           Setloop(data);
-          
+
         })
       }, 5000);
-      
-     }
-    if(item.type=='venue'){
-      
+
+    }
+    if (item.type == 'venue') {
+
       history('/Venues')
     }
-    else if(item.type=='Photographers'){
-      
+    else if (item.type == 'Photographers') {
+
       history('/Photo')
     }
-    else if(item.type=='Makeup'){
-      
+    else if (item.type == 'Makeup') {
+
       history('/makeup')
     }
-    else if(item.type=='Clothing'){
- 
+    else if (item.type == 'Clothing') {
+
       history('/clothing')
     }
-    else if(item.type=='Food'){
-    
+    else if (item.type == 'Food') {
+
       history('/food')
     }
-    else if(item.type=='Decoration'){
+    else if (item.type == 'Decoration') {
       history('/deco')
     }
-   
+
   }
 
   const [isOpen, setIsOpen] = useState(false);
@@ -211,8 +210,8 @@ function NavBar({ onClick }) {
               <button id="MenuBarRes" onClick={Opening}>
                 <img src={MenuLogo} alt="" id="MenuBarResImg" />
               </button>
-              <Link to="/cart"> 
-              <YourComponent></YourComponent>
+              <Link to="/cart">
+                <YourComponent></YourComponent>
               </Link>
             </>
           )}
@@ -230,7 +229,7 @@ function NavBar({ onClick }) {
                 <input
                   type="text"
                   className="search-bar"
-                  placeholder={RecentData?`You Searched For "${loop.venue}"`:`Search for vendors, ideas, real wedding stories and more!`}
+                  placeholder={RecentData ? `You Searched For "${loop.venue}"` : `Search for vendors, ideas, real wedding stories and more!`}
                   onChange={TextChanged}
                   onClick={Recentdata}
                 />
@@ -241,7 +240,7 @@ function NavBar({ onClick }) {
                     return (
                       <div
                         className="search-result"
-                      onClick={(e)=>Searchsmall(data)} style={{cursor: 'pointer'} }>
+                        onClick={(e) => Searchsmall(data)} style={{ cursor: 'pointer' }}>
                         <img src={data.image}></img>
                         {data.venue}
                       </div>
@@ -283,7 +282,7 @@ function MainDiv() {
     <div className="MainD" style={{ backgroundImage: `url(${backgroundImg})` }}>
       <div className="Text">
         <h1>Shadi Karni He</h1>
-        <h2 style={{marginTop:'3px'}}>Ajao Kara Denge</h2>
+        <h2 style={{ marginTop: '3px' }}>Ajao Kara Denge</h2>
       </div>
       <button>
         <Link

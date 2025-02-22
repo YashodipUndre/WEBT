@@ -100,7 +100,7 @@ const Template = () => {
       <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
       <section className={styles.mainSection} >
        
-        {serviceData ? serviceData.map((value) => (
+        {Array.isArray(serviceData) ? serviceData.map((value) => (
           <a className={styles.card} href="#" >
             <LowerSection
               key={value._id}

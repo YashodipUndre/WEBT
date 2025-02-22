@@ -17,4 +17,5 @@ const UserSchema = new Schema({
     address:{type:String,required:true
     }
 })
-exports.Model = mongoose.model('colleges', UserSchema);
+const model = mongoose.model('colleges', UserSchema);
+export default model;

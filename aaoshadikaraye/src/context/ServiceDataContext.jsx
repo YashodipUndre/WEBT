@@ -3,7 +3,7 @@ import React from 'react';
 const ServiceDataContext = createContext();
 
 const ServiecDataProvider = ({ children }) => {
-  const [serviceData, setServiceData] = useState('');
+  const [serviceData, setServiceData] = useState([]);
   return (
     <ServiceDataContext.Provider value={[serviceData,setServiceData]}>
       {children}
