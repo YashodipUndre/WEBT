@@ -154,4 +154,4 @@ function App() {
   );
 }
 
-export default App;  i deployed my site and is this routing right
+export default App;
