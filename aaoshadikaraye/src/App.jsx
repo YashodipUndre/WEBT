@@ -24,33 +24,134 @@ import Food from "./Templates/Food";
 import WeddingReg from "./WeddingReg";
 import ContactForm from "./Components/Contactus";
 function App() {
+  const [auth, userAuth] = useAuth();
   const [SMBDSIZE, setSMBDSIZE] = useState("0px");
 
   function SideMenuLoader() {
-    setSMBDSIZE(SMBDSIZE === "0px" ? "200px" : "0px");
+    if (SMBDSIZE === "0px") {
+      setSMBDSIZE("200px");
+    } else if (SMBDSIZE === "200px") {
+      setSMBDSIZE("0px");
+    }
+  }
+  const [frData, setFormData] = useState("");
+  function FormData(formData) {
+    setFormData(formData);
   }
 
   return (
     <Router>
-      
-      <SideMenu SIZEGETTER={SMBDSIZE} />
       <Routes>
-        <Route path="/" element={<MainDiv />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/mainpage" element={<MainPage />} />
-        <Route path="/venues" element={<Venues />} />
-        <Route path="/photo" element={<Photo />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/makeup" element={<Makeups />} />
-        <Route path="/clothing" element={<Clothing />} />
-        <Route path="/deco" element={<Deco />} />
-        <Route path="/food" element={<Food />} />
-        <Route path="/weddingReg" element={<WeddingReg />} />
-        <Route path="/contactform" element={<ContactForm />} />
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+              <NavBar onClick={SideMenuLoader}></NavBar>
+              <SideMenu SIZEGETTER={SMBDSIZE}></SideMenu>
+              <MainDiv></MainDiv>
+            </>
+          }
+        />
+        <Route
+          path="/SignUp"
+          element={
+            <>
+              <SignUp></SignUp>
+            </>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <>
+              <Login></Login>
+            </>
+          }
+        />
+        <Route
+          path="/MainPage"
+          element={
+            <>
+              <MainPage></MainPage>
+            </>
+          }
+        />
+        <Route
+          path="/Venues"
+          element={
+            <>
+              <Venues></Venues>
+            </>
+          }
+        />
+        <Route
+          path="/Photo"
+          element={
+            <>
+              <Photo></Photo>
+            </>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <>
+              <Cart></Cart>
+            </>
+          }
+        />
+         <Route
+          path="/makeup"
+          element={
+            <>
+              <Makeups></Makeups>
+            </>
+          }
+        />
+         <Route
+          path="/clothing"
+          element={
+            <>
+              <Clothing></Clothing>
+            </>
+          }
+        />
+         <Route
+          path="/deco"
+          element={
+            <>
+              <Deco></Deco>
+            </>
+          }
+        />
+        <Route
+          path="/food"
+          element={
+            <>
+              <Food></Food>
+            </>
+          }
+        />
+           <Route
+          path="/weddingReg"
+          element={
+            <>
+              <WeddingReg></WeddingReg>
+            </>
+          }
+        />
+        <Route
+          path="/ContactForm"
+          element={
+            <>
+              <ContactForm></ContactForm>
+            </>
+          }
+        />
       </Routes>
     </Router>
   );
 }
 
-export default App;
+export default App;  i deployed my site and is this routing right
