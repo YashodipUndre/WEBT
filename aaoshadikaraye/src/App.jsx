@@ -13,7 +13,7 @@ import Login from "./login";
 import UserContext, { useAuth } from "./context/UserContext";
 import MainPage from "./MainPage";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Venues from "./Venues";
+import Venue from "./Templates/venue";
 import SimpleBackdrop from "./Loader";
 import Cart from "./Cart";
 import Photo from "./Templates/Photo";
@@ -81,7 +81,7 @@ function App() {
           path="/Venues"
           element={
             <>
-              <Venues></Venues>
+              <Venue></Venue>
             </>
           }
         />
