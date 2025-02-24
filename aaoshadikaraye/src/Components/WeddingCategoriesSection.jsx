@@ -73,7 +73,7 @@ const WeddingCategoriesSection = () => {
   }
   async function OpenVenues(e) {
     try {
-        console.log("Clicked ID:", e.target.id);
+      history("/Venues");
 
         const ans = await axios.get(
             `https://aaoshadikaraye.onrender.com/service/venues/${e.target.id}`,
@@ -86,7 +86,7 @@ const WeddingCategoriesSection = () => {
         localStorage.setItem("ServiceData", JSON.stringify(ans.data));
 
         // Navigate only after data is set
-        history("/Venues");
+        
     } catch (error) {
         console.error("Error fetching venues:", error);
     }
