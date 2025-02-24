@@ -5,7 +5,7 @@ const server = express();
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 server.use(cors({
-    origin: '*', // React app's URL
+    origin: 'https://webt-5.onrender.com', // React app's URL
     credentials: true, // Allow cookies to be sent
 }));
 require('dotenv').config()
