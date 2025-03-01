@@ -88,6 +88,7 @@ function NavBar({ onClick }) {
     const ans = await axios.post("https://aaoshadikaraye.onrender.com/logout");
     authUser(null);
     setWedUser(null);
+    localStorage.setItem("wed",null);
     localStorage.setItem("auth", null);
     //localStorage.setItem('wed', null);
     history('/MainPage');

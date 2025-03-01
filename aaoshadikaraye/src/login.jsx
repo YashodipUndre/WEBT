@@ -56,12 +56,14 @@ function Login() {
       if (ans.data._id) {
         console.log(ans.data);
         authUser(ans.data);
+        setWedUser(ans.data);
         localStorage.setItem("auth", JSON.stringify(ans.data));
         const timeout = setTimeout(async () => { // Use `setTimeout` instead of `setInterval`
             await axios.post("https://aaoshadikaraye.onrender.com/logout");
             console.log("Done");
             authUser(null);
             setWedUser(null);
+            localStorage.setItem("wed",null);
             localStorage.removeItem("auth"); // Remove instead of setting null
             history("/MainPage");
             setCart([]);
