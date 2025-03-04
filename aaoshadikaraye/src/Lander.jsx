@@ -159,10 +159,10 @@ function NavBar({ onClick }) {
         </section>
 
         <section className="right-side">
-          <a href="/MainPage">Home</a>
-          <a href="">Stories</a>
-          <a href="">AboutUs</a>
-          <a href="">Contact</a>
+          <button onClick={()=>{history('/MainPage')}}>Home</button>
+          <button>Stories</button>
+          <button>AboutUs</button>
+          <button>Contact</button>
         </section>
         <section className="end-side">
           <div className="search-br">

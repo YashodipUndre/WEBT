@@ -37,10 +37,10 @@ body {
 
 .right-side {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   align-items: center;
   margin-left:-100px;
-
+ 
 }
 @media screen and (max-width: 950px) {
 
@@ -102,7 +102,7 @@ body {
   transition: 0.3s;
   font-size: 18px;
 }
-.right-side a {
+.right-side button {
   text-decoration: none;
   color: #F9F9E0;
   margin-left: 100px;
