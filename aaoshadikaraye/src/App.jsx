@@ -2,7 +2,7 @@ import "./CSS/App.css";
 import { useContext, useEffect, useState } from "react";
 import { NavBar, MainDiv, SideMenu } from "./Lander";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Routes,
   Switch,
@@ -40,7 +40,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route
           exact
@@ -150,7 +150,7 @@ function App() {
           }
         />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
