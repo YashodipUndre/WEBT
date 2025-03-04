@@ -40,6 +40,7 @@ function App() {
   }
 
   return (
+    <div className="App">
     <BrowserRouter>
       <Routes>
         <Route
@@ -151,6 +152,7 @@ function App() {
         />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 
